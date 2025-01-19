@@ -1,0 +1,48 @@
+.nosotros-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para la sección de valores */
+.valores-section {
+  color: white;
+  padding: 40px;
+}
+
+.valores-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.valores-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  justify-content: space-around;
+  margin: 0 auto; 
+}
+
+.valor-item {
+  flex: 1;
+  max-width: 250px;
+  margin: 20px;
+  text-align: center;
+}
+
+.valor-item img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.valor-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.valor-item p {
+  font-size: 1em;
+  line-height: 1.4;
+}

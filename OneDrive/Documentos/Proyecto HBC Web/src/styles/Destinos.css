@@ -1,0 +1,79 @@
+/* ====== General ====== */
+.destinos-page {
+    font-family: 'Clear Sans', sans-serif;
+    background-color: #f9fafc;
+  }
+  
+  .destinos-main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 20px;
+  }
+  
+  /* ====== Sección de Destinos ====== */
+  .destinos-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .destinos-section .tour-slider {
+    margin-top: 20px;
+  }
+  
+  /* ====== Sección de Contacto ====== */
+  .contacto-section {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px;
+    background: url("../images/images-tour/contact-bg.jpg") no-repeat center/cover;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .contacto-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-contacto input,
+  .form-contacto textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .form-contacto button {
+    background-color: #0a5d50;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-contacto button:hover {
+    background-color: #084c3d;
+  }
+  
+  /* ====== Preguntas Frecuentes ====== */
+  .faqs-section {
+    padding: 30px 0;
+  }
+  
+  .faqs-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

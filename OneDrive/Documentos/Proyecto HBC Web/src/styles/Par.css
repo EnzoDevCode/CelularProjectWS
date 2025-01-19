@@ -1,0 +1,28 @@
+.par-text {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  color: #494949;
+  line-height: 1.4;
+  word-break: break-word;
+  transition-duration: 1.5s;
+  max-width: 1200px;
+  padding: 10px 20px;
+}
+
+/* Alineación por defecto: centrada */
+.par-text.centro {
+  text-align: center;
+  width: 80%;
+}
+
+/* Alineación a la izquierda */
+.par-text.izquierda {
+  text-align: left;
+  width: 90%;
+}
+
+/* Alineación a la derecha */
+.par-text.derecha {
+  text-align: right;
+  width: 90%;
+}

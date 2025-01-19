@@ -1,0 +1,63 @@
+.whatsapp-button {
+  position: fixed;
+  bottom: 100px;
+  right: max(4vw, 36px);
+  z-index: 2  ;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  background-image: url("../images/cotiza.png");
+  right: 20px;
+}
+
+.whatsapp-image {
+  width: 200px; /* Tamaño fijo del botón */
+  height: 200px; /* Asegura proporciones */
+  object-fit: contain; /* Asegura que la imagen no se deforme */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.whatsapp-image:hover {
+  transform: scale(1.1); /* Efecto de agrandar ligeramente */
+}
+
+/* Sticky Style */
+.whatsapp-button.sticky {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .whatsapp-image {
+    width: 70px;
+    height: 60px;
+    margin-right: 2px;
+    margin-bottom: -100px;
+  }
+  .whatsapp-button.sticky {
+    position: fixed;
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-image {
+    width: 54px;
+    height: 54px;
+    margin-right: -10px;
+    margin-bottom: -100px;
+
+  }
+  .whatsapp-button.sticky {
+    position: fixed;
+    bottom: 50px;
+    margin-right: 0px;
+    margin-bottom: -15px;
+  }
+}

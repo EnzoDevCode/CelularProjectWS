@@ -1,0 +1,119 @@
+/* Contenedor principal */
+.itinerario-super-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 0 0 15px;
+}
+
+.itinerario-container {
+  position: relative;
+  padding-bottom: 40px;
+  padding-left: 30px; 
+  /* border-left: 6px solid #ab2a2a;  */
+  margin-left: 20px, auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  float: left;
+}
+
+.itinerario-super-container,
+.itinerario-container {
+  overflow-x: hidden;
+}
+
+/* Cada bloque de cronograma */
+.cronograma {
+  position: relative;
+  padding: 20px 0;
+  margin-left: 19px; 
+  clear: both; 
+  display: block;
+}
+
+/* Título de cada cronograma */
+.cronograma-titulo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  transform: translate(0.9rem, -1.1rem);
+  color: #000000;
+}
+
+/* Hora de cada cronograma */
+.cronograma-hora {
+  font-size: 1.2rem;
+  color: #4e4e4e;
+  margin-left: 10px;
+  transform: translate(1.1rem ,-0.8rem);
+}
+
+/* Lista de actividades */
+.cronograma-lista {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+/* Cada actividad dentro de la lista */
+.actividad-item {
+  font-size: 1.3rem;
+  font-weight: 100;
+  color: #333333;
+  margin-bottom: 5px;
+  padding-left: 25px; 
+  position: relative;
+  display: flex;
+  width: 100%; /* Hace que cada actividad ocupe el ancho completo de la lista */
+  box-sizing: border-box; 
+}
+
+/* Línea y círculo del cronograma */
+.cronograma::before {
+  content: "";
+  position: absolute;
+  height: 101.5%;
+  left: -30px;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: var(--color-primario);
+  border-radius: 45px;
+}
+
+/* Icono de inicio (check) */
+.cronograma::after {
+  content: "✔";
+  display: flex;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  left: -44.6px;
+  top: 0;
+  font-size: 1.7rem;
+  color: white;
+  background-color: var(--color-primario);
+  border-radius: 40px;
+}
+
+/* Punto rojo para cada actividad */
+.actividad-item::before {
+  content: "";
+  position: absolute;
+  left: -37.04px;
+  top: -0.07em;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+}

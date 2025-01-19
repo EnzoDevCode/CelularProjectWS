@@ -1,0 +1,191 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+li{
+  list-style: none;
+  font-family: 'Segoe UI Emoji', sans-serif;
+}
+
+.topheader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 11;
+  background-color: transparent;
+  transition: opacity 1s ease, transform 0.5s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.topheader-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.7s ease;
+  z-index: -1; 
+  background-color: #002e5d;
+  height: 58px;
+}
+
+.topheader.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.topheader.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*.topheader.visible-scrolled {
+  background-color: var(--color-primario-oscuro);
+}*/
+
+.topheader.at-top {
+  background-color: transparent;
+  transition: background-color .9s ease;
+}
+
+.topheadercontent {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.contact{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+.contact li {
+  list-style: none;
+  padding-right: 10px;
+  margin-right: 20px;
+  padding-top: 17px;
+  font-size: 19px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.contact li:last-child {
+  border-right: none; 
+}
+
+.contact li a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.contact li a i {
+  margin-left: 5px;
+}
+
+.contact li a .material-icons {
+  font-size: 16px; 
+  margin-right: 8px; 
+  vertical-align: middle; 
+  color: white;
+  opacity: 0.7;
+}
+
+
+.contact li a i, 
+.contact li a svg{
+  font-size: 19px;
+  margin-right: 8px; 
+  vertical-align: middle;
+}
+
+
+.contact li {
+  display: flex;
+  align-items: center;
+}
+
+.contact li a {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+li{
+  margin: 0;
+}
+
+
+.redes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin-right: 15px;
+}
+
+.redes li {
+  list-style: none;
+  float: left;
+}
+.whatsapp-icon {
+  font-size: 26px !important;  /* Tamaño más grande para el ícono de WhatsApp */
+  transition: transform 0.3s ease; /* Efecto suave al hacer hover */
+  padding-left: 6px;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.3); /* Aumenta un poco más al hacer hover */
+}
+
+.contact li a .fa-instagram {
+  font-size: 23px !important; /* Aumenta el tamaño del ícono de Instagram */
+  transition: transform 0.3s ease; /* Efecto suave al hacer hover */
+}
+
+.contact li a .fa-instagram:hover {
+  transform: scale(1.3); /* Efecto de aumento al pasar el mouse */
+}
+
+
+

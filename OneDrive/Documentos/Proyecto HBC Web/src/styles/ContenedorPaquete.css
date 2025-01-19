@@ -1,0 +1,96 @@
+.paquete-link {
+  text-decoration: none;
+  color: inherit; 
+  display: flex;           
+  justify-content: center; 
+  align-items: center;     
+}
+
+.paquete-card {
+  width: 100%;
+  max-width: 350px;
+  margin: 15px;
+  border-radius: 15px; 
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paquete-card:hover {
+  transform: translateY(-10px); /* Efecto de elevación al hacer hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra más fuerte al hacer hover */
+}
+
+.paquete-imagen {
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.paquete-card:hover .paquete-imagen {
+  transform: scale(1.05); 
+}
+
+.paquete-overlay {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 90%, transparent);
+  padding: 20px;
+  bottom: 0;
+}
+
+.paquete-texto-categoria {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
+
+.paquete-titulo {
+  font-size: 26px; 
+  font-weight: bold;
+  color: white;
+  margin: 0 0 5px 0;
+}
+
+.paquete-duracion {
+  font-size: 16px;
+  color: white;
+  margin-top: 8px;
+  font-weight: bold;
+  display: flex;
+  gap: 10px; 
+}
+
+.duracion-item {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.duracion-item-logo-sol {
+  color: #fdd835; 
+}
+
+.duracion-item-logo-luna {
+  color: #61a5fd; 
+}
+
+.paquete-overlay p {
+  margin: 0;
+}
+
+.paquete-texto-categoria,
+.paquete-titulo,
+.paquete-duracion {
+  transition: transform 0.3s ease; 
+}
+
+.paquete-card:hover .paquete-texto-categoria,
+.paquete-card:hover .paquete-titulo,
+.paquete-card:hover .paquete-duracion {
+  transform: translateY(-15px); 
+}

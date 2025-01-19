@@ -1,0 +1,188 @@
+.slider-card {
+  display: block;
+  width: 380px;
+  height: 440px;
+  border-radius: 26px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.slider-card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.slider-card:hover .slider-card-title {
+  transform: translateY(-5px); 
+}
+
+/* Imagen de fondo de la mitad superior */
+.slider-card-image {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.slider-card-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Ajusta el nivel de opacidad */
+  z-index: 1;
+}
+
+/* Título en la esquina inferior izquierda de la imagen */
+.slider-card-title {
+  text-align: left;
+  position: absolute;
+  bottom: 25px;
+  left: -68px;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+  z-index: 2;
+  margin-left: 90px;
+  transition: transform 0.3s ease;
+}
+
+.slider-card-image::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  pointer-events: none; 
+}
+
+/* Contenedor para el ícono y el texto */
+.slider-card-location {
+  position: absolute;
+  bottom: 62px;
+  left: 22px;
+  z-index: 2; /* Asegura que esté por encima del overlay */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo del ícono */
+.slider-card-location-icon {
+  font-size: 0.77rem;
+}
+
+/* Contenido de la carta en la mitad inferior */
+.slider-card-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%;
+}
+
+/* Descripción del paquete */
+.slider-card-description {
+  font-size: 18px;
+  color: #464646;
+  line-height: 1.5;
+  margin: 25px 35px;
+  text-align: center;
+  height: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Contenedor para la línea y el botón en la parte inferior */
+.slider-card-footer {
+  margin-top: auto;
+  transform: translateY(75%);
+  transition: transform 0.3s ease;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Al hacer hover en el slider-card, el footer sube */
+.slider-card:hover .slider-card-footer {
+  transform: translateY(-30%); 
+}
+
+/* Gradiente que aparece en hover */
+.slider-card-footer-gradient {
+  position: absolute;
+  bottom: -100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  border: solid transparent;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-primario-oscuro-oscuro);
+  transition: bottom 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  opacity: 0;
+  z-index: 1; 
+}
+
+.slider-card-footer-gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primario-oscuro);
+  border-radius: 3px;
+  border-width: 0 0 4px;
+    z-index: -1; 
+}
+
+/* Al hacer hover en la tarjeta, el gradiente sube */
+.slider-card:hover .slider-card-footer-gradient {
+  bottom: 0; 
+  opacity: 1; 
+  filter: brightness(1.1); 
+}
+
+
+/* Contenido textual del footer */
+.slider-card-footer-content {
+  position: relative;
+  z-index: 2; /* Mantiene el texto por encima del gradiente */
+  /* padding: 10px 0; */
+}
+
+/* Al hacer hover en el slider-card, el ancho de la línea aumenta */
+.slider-card:hover .slider-card-divider {
+  width: 80%; 
+}
+
+/* Texto del botón */
+.slider-card-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,558 @@
+@charset "utf-8";
+
+
+h4 {
+  font-size: 13px;
+  color: #373737;
+  text-align: left;
+  position: relative;
+  z-index: 1000;
+  width: auto;
+}
+
+a {
+  color: #b6b6b6;
+  transition: all 0.25s ease-in-out;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99;
+  height: auto;
+}
+
+.headerlogo {
+  display: inline-block;
+  width: 80px;
+  height: auto;
+  position: absolute;
+  margin-left: -34vw;
+  top: -33px;
+  
+}
+
+.headerlogo img {
+  width: 50%;
+  height: auto;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.headerlogo img:hover {
+  scale: 1.15;
+}
+
+.menuheader {
+  background-color: white;
+  justify-content: right; /* Centra horizontalmente el contenido */
+  padding-right: 12px;
+  align-items: center; /* Centra verticalmente */
+  width: 101%; /* Abarca todo el ancho disponible */
+  padding: 14px 7vw  14px  50px ;
+  border-radius: 5px; /* Bordes redondeados */
+  position: relative;
+  top: 15px; /* Desplázalo hacia abajo */
+  right: 13px;
+}
+
+.menuprincipal li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #002e5d;
+  font-family: "Segoe UI Emoji", sans-serif;
+  float: right;
+  padding: 5px 12px;
+  margin: 0 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.menuprincipal li a i {
+  margin: 0 0 0 7px;
+  font-size: 14px;
+}
+
+
+.menuprincipal li a:hover {
+  transition: background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.submenu {
+  top: 50px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex: 1 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0s ease;
+}
+
+.submenucontainer {
+  position: relative;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around; 
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 20px;
+  margin-top: 50px;
+  background-color: #FFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px 2px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  float: left;
+}
+
+.submenucontainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(247, 247, 247, 0.9), rgba(224, 224, 224, 0.9), rgba(194, 194, 194, 0.9));
+  opacity: 0;
+  transition: opacity 0.5s ease-out, background 0.5s ease-out;
+  z-index: -1;
+}
+
+.submenucontainer:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 380px);
+  background: #fff;
+}
+
+.submenucontainer small {
+  font-family: "Segoe UI Emoji", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.submenucontainer.hovered-tours::before, .submenucontainer.hovered-paquetes::before {
+  background: linear-gradient(135deg, rgba(247, 247, 247, 0.8), rgba(224, 224, 224, 0.8), rgba(194, 194, 194, 0.8));
+  opacity: 1;
+}
+
+.submenupaquetes.visible, .submenutours.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0.2s;
+}
+
+.paquetesmenu:hover .submenupaquetes {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0.2s;
+}
+
+.toursmenu:hover .submenutours {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0.2s;
+}
+
+.submenu:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+.submenu li {
+  width: 25%;
+  height: auto;
+  padding: 0 10px;
+}
+
+.submenu li a {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.fotosubmenu {
+  width: 100%;
+  height: 170px;
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fotosubmenu img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: all .25s ease-in-out;
+}
+
+.submenu li a h4,
+.submenutours li h4 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+  font-family: 'Segoe UI Emoji', sans-serif;
+  margin: 15px 0 10px 0;
+  transition: all .25s ease-in-out;
+}
+
+.submenu li a:hover h4 {
+  color: #cf1e26;
+}
+
+.submenu li a:hover img {
+  opacity: 0.85;
+}
+
+.submenu li a p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  color: #757575 !important;
+  font-weight: normal;
+}
+
+.submenutours .submenucontainer {
+  position: relative;
+  width: 100%;
+}
+
+.submenutours li {
+  width: 75%;
+}
+
+.submenutours li:last-child {
+  width: 25%;
+}
+
+.menupaquetes {
+  list-style: none;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  max-width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menutourul, .menupaquetesul {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.toursmenu:hover .menutourul, 
+.paquetesmenu:hover .menupaquetesul {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease;
+}
+
+.submenutours li a:after
+{
+  position: absolute;
+  top: 6px;
+  left: 0;
+  font-size: 12px;
+  font-family: "Segoe UI Emoji";
+  color: #757575;
+  transition: all .25s ease-in-out;
+}
+
+.submenutours li a:hover:after {
+  left: 10px;
+  color: #cf1e26 !important;
+}
+
+.submenu li a:hover {
+  bottom: 0;
+}
+
+.menuprincipal li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menuprincipal li:hover .submenucontainer {
+  margin-top: 30px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  padding: 0px;
+  margin: 0;
+  width: 350px; 
+  height: 300px; 
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 1;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.has-active-card-tours .card:not(.active) {
+  background: linear-gradient(180deg, #f2f2f2, #d9d9d9, #bfbfbf, #a6a6a6);
+}
+
+.has-active-card-paquetes .card:not(.active) {
+  background: linear-gradient(180deg, #f2f2f2, #d9d9d9, #bfbfbf, #a6a6a6);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(60, 206, 131, 0.3);
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--color-primario-oscuro); 
+  transition: width 0.3s ease;
+}
+
+.navbar {
+  float: right;
+  top: 0;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  position: relative;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001; 
+}
+
+.hamburger-icon .line {
+  height: 3px;
+  background-color: #FFF;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.line1-open {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.line2-open {
+  opacity: 0;
+}
+
+.line1, .line3 {
+  width: 100%; 
+}
+
+.line3-open {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-items {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.8); 
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  transition: right 0.4s ease; 
+  z-index: 1000;
+}
+
+.menu-open {
+  right: 0;
+}
+
+.menu-items li {
+  list-style: none;
+  
+}
+
+.menu-items li:first-child{
+  padding-top: 95px;
+  list-style: none;
+}
+
+.menu-items li a {
+  text-decoration: none;
+  font-size: max(3vh, 3vw);
+  color: #fff; 
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 15px;
+}
+
+/*.menu-items li a:hover {
+  color: #117964;
+}*/
+
+@media (min-width: 1170px) {
+  .navbar-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .menuprincipal {
+    display: none;
+  }
+
+  .navbar{
+    padding-top: min(20px, 2vw);
+  }
+
+  .headerlogo {
+    float: left;
+    width: 8vw;
+    position: relative;
+    top: 0;
+    left: 5vw;
+    margin-left: 0;
+  }
+
+  .headerlogo img {
+    width: 4vw;
+    height: auto;
+  }
+  
+}
+
+
+@media (max-width: 768px) {
+  .headerlogo {
+    float: left;
+    width: max(10vw,50px);
+    position: relative;
+    top: 0;
+    left: 5vw;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .contact li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact li:nth-child(1) {
+    justify-content: flex-start;
+  }
+
+  .contact li:nth-child(2) {
+    justify-content: flex-end;
+  }
+
+}

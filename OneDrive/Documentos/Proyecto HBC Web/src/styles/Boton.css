@@ -1,0 +1,350 @@
+:root {
+  --font-size-boton: min(6vw, 20px);
+  --padding-borde-boton-horizontal: min(3vw, 1.2rem); 
+  --padding-borde-boton-vertical: min(3vw, 0.8rem);}
+
+.boton-centro {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 1em auto;
+}
+
+.boton-izquierda {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 1em auto;
+}
+
+.boton-derecha {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 1em auto;
+}
+
+.boton-link-primary {
+  appearance: none;
+  background-color: var(--color-primario-oscuro);
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: var(--padding-borde-boton-vertical) var(--padding-borde-boton-horizontal);
+  position: relative;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+              background-color 100ms cubic-bezier(0.694, 0, 0.335, 1), 
+              color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+              border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+}
+
+.boton-link-primary:hover {
+  color: var(--color-primario-oscuro); 
+  border-color: var(--color-primario-oscuro); 
+}
+
+.boton-link-primary:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: white;
+  clip-path: polygon(125% 0, 126% 0, 101% 100%, 100% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.boton-link-primary:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.boton-text-primary {
+  z-index: 1;
+  position: relative;
+  font-size: var(--font-size-boton);
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.boton-link-primary-invertido {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: var(--padding-borde-boton-vertical) var(--padding-borde-boton-horizontal);
+  position: relative;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+              background-color 100ms cubic-bezier(0.694, 0, 0.335, 1), 
+              color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+              border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid var(--color-primario-oscuro);
+  border-radius: 3px;
+  color: var(--color-primario-oscuro);
+}
+
+.boton-link-primary-invertido:hover {
+  color: white; 
+  border-color: rgb(255, 255, 255, 1); 
+}
+
+.boton-link-primary-invertido:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: var(--color-primario-oscuro);
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.boton-link-primary-invertido:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.boton-text-primary-invertido {
+  z-index: 1;
+  position: relative;
+  font-size: var(--font-size-boton);
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.boton-link-secondary {
+  appearance: none;
+  background-color: var(--color-secundario);
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: var(--padding-borde-boton-vertical) var(--padding-borde-boton-horizontal);
+  position: relative;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+              background-color 100ms cubic-bezier(0.694, 0, 0.335, 1), 
+              color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+              border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+}
+
+.boton-link-secondary:hover {
+  color: var(--color-secundario); 
+  border-color: var(--color-secundario); 
+}
+
+.boton-link-secondary:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: white;
+  clip-path: polygon(125% 0, 126% 0, 101% 100%, 100% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.boton-link-secondary:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.boton-text-secondary {
+  z-index: 1;
+  position: relative;
+  font-size: var(--font-size-boton);
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.boton-link-secondary-invertido {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: var(--padding-borde-boton-vertical) var(--padding-borde-boton-horizontal);
+  position: relative;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+              background-color 100ms cubic-bezier(0.694, 0, 0.335, 1), 
+              color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+              border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid var(--color-secundario);
+  border-radius: 3px;
+  color: var(--color-secundario);
+}
+
+.boton-link-secondary-invertido:hover {
+  color: white; 
+  border-color: rgb(255, 255, 255, 1); 
+}
+
+.boton-link-secondary-invertido:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: var(--color-secundario);
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.boton-link-secondary-invertido:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.boton-text-secondary-invertido {
+  z-index: 1;
+  position: relative;
+  font-size: var(--font-size-boton);
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.boton-link-tertiary-invertido {
+  appearance: none;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: var(--padding-borde-boton-vertical) var(--padding-borde-boton-horizontal);
+  position: relative;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+              background-color 100ms cubic-bezier(0.694, 0, 0.335, 1), 
+              color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+              border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid #1D4E42;
+  border-radius: 3px;
+  color: #1D4E42;
+  
+  background-color: white;
+}
+
+.boton-link-tertiary-invertido:hover {
+  color: white; 
+}
+
+.boton-link-tertiary-invertido:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #1D4E42;
+  clip-path: polygon(-1% -1%, 0 -1%, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.boton-link-tertiary-invertido:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 -1%, 101% -1%, 101% 101%, 0 101%);
+}
+
+.boton-text-tertiary-invertido {
+  z-index: 1;
+  position: relative;
+  font-size: var(--font-size-boton);
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  color: inherit;
+}

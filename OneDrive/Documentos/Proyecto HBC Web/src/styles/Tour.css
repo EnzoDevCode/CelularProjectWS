@@ -1,0 +1,83 @@
+/* src/styles/Tour.css */
+
+.tour-page {
+  font-family: 'Roboto', sans-serif;
+}
+
+.tour-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Espacio entre itinerario y actividades */
+  margin-top: 30px;
+}
+
+.tour-details > * {
+  flex: 1;
+}
+
+.tour-introduction {
+  text-align: center;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.tour-introduction h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.tour-introduction p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Asegurar que los elementos de la lista se dispongan en columnas */
+.itinerary-list,
+.activities-list {
+  list-style-type: none; /* Sin viñetas predeterminadas */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Forzar disposición en columna (vertical) */
+  gap: 15px; /* Espacio entre los elementos */
+}
+
+/* Elementos individuales para actividades e itinerario */
+.activities-item {
+  background-color: #b3afaf; /* Color de fondo oscuro para destacar */
+  color: #eee; /* Texto claro sobre el fondo oscuro */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #eee;
+  max-width: 560px;
+  padding: 15px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: left;
+
+}
+
+/* Efecto hover para cada ítem */
+.activities-item:hover {
+  background-color: #eee; /* Un tono ligeramente más claro en hover */
+  transform: translateY(-2px); /* Efecto de elevación en hover */
+}
+
+/* Ícono decorativo antes del texto en actividades e itinerario */
+.activities-item::before {
+  margin-right: 10px;
+  color: #4caf50; 
+  font-size: 20px;
+}
+
+.activities-item:hover::before {
+  color: #00aaff;
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 768px) {
+  .tour-details {
+    flex-direction: column; /* En pantallas pequeñas, apilar los elementos */
+  }
+}

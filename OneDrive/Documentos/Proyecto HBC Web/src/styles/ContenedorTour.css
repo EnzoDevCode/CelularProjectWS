@@ -1,0 +1,105 @@
+
+
+.tour-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  max-width: 120px;
+  align-items: center;
+  width: 100%;       /* Asegura que ocupe el ancho completo */
+  height: 100%;      /* Asegura que ocupe el alto completo */
+}
+
+.tour a{
+  max-width: 400px;
+}
+
+.tour-card {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: auto; /* Centra el elemento dentro de su contenedor */
+}
+
+  
+  .tour-card:hover {
+    transform: translateY(-10px); /* Efecto de elevación al hacer hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra más fuerte al hacer hover */
+  }
+  
+  .tour-imagen {
+    position: relative;
+    width: 100%;
+    padding-bottom: 150%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .tour-card:hover .tour-imagen {
+    transform: scale(1.05); 
+  }
+  
+  .tour-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent 54%);
+  padding: 30px;
+  top: 0; /* Coloca el overlay en la parte superior */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el contenido al principio (arriba) */
+  align-items: flex-start;
+  transition: background 0.3s ease;
+}
+
+  
+  .tour-texto-categoria {
+    font-size: 18px;
+    font-weight: bold;
+    color: white; /* Blanco con alta opacidad */
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 5px;
+  }
+  
+  .tour-titulo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white; /* Blanco puro */
+    margin: 0 0 5px 0;
+    text-align: left;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada para mejor visibilidad */
+  }
+  
+  
+  .tour-duracion {
+    font-size: 20px;
+    color: #949494;
+    margin-top: 8px;
+    padding-top: 8px;
+    font-weight: bold;
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+  
+  
+  .tour-overlay p {
+    margin: 0;
+  }
+  
+  .tour-texto-categoria,
+  .tour-titulo,
+  .tour-duracion {
+    transition: transform 0.3s ease; 
+  }
+  
+  .tour-card:hover .tour-texto-categoria,
+  .tour-card:hover .tour-titulo,
+  .tour-card:hover .tour-duracion {
+    transform: translateY(-20px); 
+  }

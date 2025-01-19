@@ -1,0 +1,46 @@
+.activities-section {
+  margin: 20px 0;
+}
+
+.activities-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.activities-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activities-item {
+  background-color: #eee;
+  color: #302f2f;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.activities-item:hover {
+  background-color: #eee;
+  transform: translateY(-2px);
+}
+
+.activities-item::before {
+  content: "✔";
+  margin-right: 10px;
+  color: #4caf50;
+  font-size: 20px;
+}
+
+.activities-item:hover::before {
+  color: #00aaff;
+}

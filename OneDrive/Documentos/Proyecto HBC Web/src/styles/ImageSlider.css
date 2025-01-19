@@ -1,0 +1,285 @@
+/* Contenedor del slider */
+.slider-container {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+/* Estilo base para cada imagen */
+.slider-item {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Gradiente que aparece cuando se hace hover */
+.slider-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 50%);
+  z-index: 1;
+  transition: height 0.7s ease;
+  pointer-events: none;
+}
+
+/* Al hacer hover, el gradiente crece hacia arriba */
+.slider-item:hover::after {
+  height: 100%;
+}
+
+/* Agregar difuminado oscuro con un pseudo-elemento ::before */
+.slider-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0) 30%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Asegurarse de que el contenido esté sobre el difuminado */
+.slider-content-top,
+.slider-content-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cuando se hace hover sobre una imagen */
+.slider-item:hover {
+  flex: 3;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el contenido del slider */
+.slider-content-top h3 {
+  color: rgba(184, 184, 184, 1);
+  text-align: left;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
+.slider-content-top h2 {
+  color: rgba(247, 247, 247, 1);
+  text-align: left;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.slider-content-top h3,
+.slider-content-top h2 {
+  margin: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilos para el contenido inferior */
+.slider-content-bottom {
+  color: rgb(241, 241, 241);
+  text-align: left;
+  font-size: 10px;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(20px); /* Inicialmente desplazado hacia abajo */
+  transition: opacity 0.25s ease, transform 0.5s ease, visibility 0.5s;
+}
+.slider-description {
+  color: rgb(241, 241, 241);
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Al hacer hover, desplazamos el título hacia abajo */
+.slider-item:hover .slider-content-top h3,
+.slider-item:hover .slider-content-top h2 {
+  transform: translateY(30px);
+}
+
+/* Ocultar los títulos de los otros slider-items cuando se hace hover sobre un slider-item */
+.slider-container:hover .slider-item:not(:hover) .slider-content-top h3,
+.slider-container:hover .slider-item:not(:hover) .slider-content-top h2 {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.1s ease;
+}
+
+/* Cuando no hay hover en ningún slider-item, mostrar todos los títulos */
+.slider-container:not(:hover) .slider-content-top h3,
+.slider-container:not(:hover) .slider-content-top h2 {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 2s ease, visibility 0.5s ease;
+}
+
+/* Al hacer hover, mostramos el contenido adicional con fade-in */
+.slider-item:hover .slider-content-bottom {
+  opacity: 1;
+  max-height: 500px;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease, visibility 1s,
+    max-height 2.5s ease;
+}
+
+/* Contenedor para la duración y el precio */
+.duration-price-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.duration-item {
+  display: flex;
+  align-items: center;
+}
+
+.duration-icon-sun {
+  font-size: 24px;
+  color: #fdd835;
+  margin-right: 5px;
+}
+
+.duration-icon-moon {
+  font-size: 24px;
+  color: #61a5fd;
+  margin-right: 5px;
+}
+
+.duration-price-container .label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.duration-price-container .value-dias {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.duration-price-container .value-noches {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.no-style-link {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del contenido interno */
+  display: inline-flex;
+}
+
+.slider-link-wraper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .slider-item {
+    height: 170px;
+    flex: none;
+  }
+
+  .slider-content-top h3 {
+    font-size: 20px;
+  }
+
+  .slider-content-top h2 {
+    font-size: 28px;
+  }
+
+  .slider-description {
+    opacity: 0;
+  }
+
+  /* desactivando la funcionalidad de hover en pantallas pequeñas */
+  .slider-item:hover::after {
+    height: initial;
+  }
+
+  .slider-item:hover {
+    flex: initial;
+    box-shadow: initial;
+  }
+
+  .slider-item:hover .slider-content-top h3,
+  .slider-item:hover .slider-content-top h2 {
+    transform: initial;
+  }
+
+  .slider-container:hover .slider-item:not(:hover) .slider-content-top h3,
+  .slider-container:hover .slider-item:not(:hover) .slider-content-top h2 {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .slider-item:hover .slider-content-bottom {
+    opacity: 0;
+    max-height: initial;
+    visibility: visible;
+    transform: initial;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item {
+    height: 150px;
+    flex: none;
+  }
+
+  .slider-content-top h3 {
+    font-size: 16px;
+  }
+
+  .slider-description {
+    opacity: 0;
+  }
+
+  .slider-content-top h2 {
+    font-size: 22px;
+  }
+}

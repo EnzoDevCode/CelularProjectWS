@@ -1,0 +1,168 @@
+.reclamaciones-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.section {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-top: 3px solid #4f9fd9; /* Línea superior roja */
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-field label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #e8e8e8; /* Fondo gris */
+}
+
+.input-field input::placeholder,
+.input-field textarea::placeholder {
+  color: #999;
+}
+
+.input-field textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2e37af; /* Verde */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #392fb8;
+}
+
+
+@media (max-width: 768px) {
+  /* Ajuste en la disposición de las secciones */
+  .reclamaciones-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  /* Ajustar la disposición de los input-row */
+  .input-row {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .input-field {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Botón de submit más pequeño */
+  .submit-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Disposición aún más compacta en pantallas de teléfonos pequeños */
+  .reclamaciones-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-field input,
+  .input-field select,
+  .input-field textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .submit-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 270px) {
+  .reclamaciones-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .section-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-field {
+    width: 100%;
+  }
+
+  .input-field input,
+  .input-field select,
+  .input-field textarea {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  .input-field label {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

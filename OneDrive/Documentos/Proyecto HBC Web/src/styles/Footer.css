@@ -1,0 +1,203 @@
+/* ====== Footer General ====== */
+footer {
+  font-family: 'Clear Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ====== Parte Superior del Footer ====== */
+.footer-top {
+  background-color: #002e5d;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: center; /* Centra las columnas horizontalmente */
+  align-items: flex-start;
+  gap: 40px; /* Espacio entre las dos columnas */
+  margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/* ====== Columna Izquierda (Contacto y Redes) ====== */
+.footer-top .footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+}
+
+/* Información de contacto */
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.footer-contact i {
+  font-size: 1.5rem;
+}
+
+/* Redes Sociales */
+.footer-middle .redesfoo {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-middle .redesfoo li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.footer-middle .redesfoo li a:hover {
+  background: #a5a5a5;
+  color: #333;
+}
+
+/* ====== Columna Derecha (Logo) ====== */
+.footer-logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  max-width: 590px;
+}
+
+.footer-logo-section img {
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-section img:hover {
+  transform: scale(1.1);
+}
+
+/* ====== Parte Inferior del Footer ====== */
+.footer-bottom {
+  background-color: #123948;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom .footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria */
+  margin: 10px 0;
+}
+
+/* Enlaces Inferiores */
+.footer-bottom .creditos ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.footer-bottom .creditos ul li {
+  list-style: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 10px;
+}
+
+.footer-bottom .creditos ul li:last-child {
+  border-right: none;
+}
+
+.footer-bottom .creditos ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom .creditos ul li a:hover {
+  color: #cfcfcf;
+}
+
+.footer-bottom p {
+  margin-top: 10px;
+}
+
+/* Firma */
+.footer-bottom .credito {
+  font-size: 12px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom .credito a {
+  color: #cfcfcf;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom .credito a:hover {
+  color: white;
+}
+
+.footer-credits{
+  justify-content: space-between;
+}
+
+/* ====== Créditos del Footer ====== */
+.footer-credits {
+  display: flex; /* Activa el modelo flexbox */
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Asegura que estén al mismo nivel vertical */
+  margin-top: 10px;;
+  flex-wrap: wrap; /* Permite que los elementos se adapten en pantallas pequeñas */
+  gap: 20px;
+  padding: 0 70px; /* Añade espacio interno a los lados */
+}
+
+/* Texto Izquierdo */
+.footer-credits p {
+  margin: 0;
+}
+
+/* Texto Derecho */
+.footer-credits .credito {
+  margin: 0;
+  text-align: right;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-logo-section {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .footer-logo-section img {
+    height: 60px;
+  }
+
+  .footer-middle .redesfoo {
+    justify-content: center;
+  }
+
+  .footer-bottom .creditos ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

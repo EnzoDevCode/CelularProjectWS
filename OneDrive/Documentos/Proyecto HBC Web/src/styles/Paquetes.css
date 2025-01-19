@@ -1,0 +1,21 @@
+.paquetes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+  padding: 20px;
+  justify-content: center; 
+  max-width: 1200px; 
+  margin: 20px auto 0; 
+}
+
+@media (max-width: 1024px) {
+  .paquetes-container {
+    grid-template-columns: repeat(2, 1fr); /* En pantallas medianas, 2 columnas */
+  }
+}
+
+@media (max-width: 768px) {
+  .paquetes-container {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, 1 columna */
+  }
+}

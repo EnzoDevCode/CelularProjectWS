@@ -1,0 +1,106 @@
+.contactanos-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.contact-item {
+  float: left;
+  width: 45%;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.contact-item h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+}
+
+.contact-item i {
+  font-size: 1.5em;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.contact-item p {
+  font-size: 1em;
+  color: #555;
+  margin: 0;
+}
+
+.contact-item a {
+  text-decoration: none;
+}
+
+/* Estilos adicionales */
+.additional-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.info-item {
+  width: 45%;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.info-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.info-item p {
+  font-size: 1em;
+  color: #555;
+}
+
+.info-item i {
+  font-size: 1.5em;
+  color: #28a745;
+  margin-right: 10px;
+}
+
+.payment-icons-contact{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.payment-icons-contact i{
+  padding: 4px 8px 4px;
+  gap: 5px;
+}
+
+.payment-icons-contact img {
+  width: 40px;
+  height: auto;
+  margin: 5px;
+}
+
+@media (max-width: 650px) {
+  .contact-item,
+  .info-item {
+    width: 100%;
+  }
+}

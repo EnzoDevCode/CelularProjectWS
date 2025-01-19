@@ -1,0 +1,134 @@
+/* Super contenedor que envuelve todo */
+.title-subtitle-super-container {
+  width: 100%; 
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  color: #002e5d;
+}
+
+.title-subtitle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: visible;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px; 
+}
+
+.title-subtitle-wrapper {
+  width: 100%; /* Ocupa todo el ancho del contenedor principal */
+  max-width: 1200px; /* Limita el contenido a 1200px de ancho */
+  margin: 0; /* Centra el contenido */
+}
+
+/* Alineación por defecto: centrada */
+.title-subtitle-container.centro .title-subtitle-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Alineación a la izquierda */
+.title-subtitle-container.izquierda .title-subtitle-wrapper {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Alineación a la derecha */
+.title-subtitle-container.derecha .title-subtitle-wrapper {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+
+.background-title {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 208px;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  top: -35px;
+  transform: translateX(-90%);
+  white-space: nowrap;
+  pointer-events: none; /* Para que no interfiera con otros elementos */
+  align-items: flex-start;
+  text-align: left;
+  transition: opacity 2s ease, transform 3s ease;
+}
+
+.background-title.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.main-title {
+  position: relative;
+  font-size: 66px;
+  z-index: 2;
+  margin-top: 40px;
+  transition-duration: 1s;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.main-subtitle {
+  position: relative;
+  font-size: 34px;
+  z-index: 2;
+  margin-top: 0px;
+  bottom: 15px;
+  transition-duration: 1s;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .title-subtitle-container {
+    padding: 20px 10px 10px;
+  }
+
+  .background-title {
+    font-size: 145px;
+    top: 40px;
+  }
+
+  .main-title {
+    font-size: 46px;
+  }
+
+  .main-subtitle {
+    font-size: 24px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .background-title {
+    top: 50px;
+    font-size: 120px;
+  }
+
+  .main-title {
+    font-size: 38px;
+  }
+
+  .main-subtitle {
+    font-size: 20px;
+  }
+}

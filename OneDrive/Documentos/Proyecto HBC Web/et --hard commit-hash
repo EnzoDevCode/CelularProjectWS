@@ -1,0 +1,134 @@
+[33mcommit 0d9a44afbff5a2df76119c863642b8b026be7356[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaineusepe[m[33m, [m[1;31morigin/mainrensex[m[33m)[m
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Sat Oct 19 09:08:48 2024 -0500
+
+    Finalización del segundo día, hicimos un mongón de huevadas, que bacanes que son ustedes
+
+[33mcommit 4ba8a1ad5101cf8afcc4eff020c0df7c5188e6b5[m
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Sat Oct 19 04:31:16 2024 -0500
+
+    ahora tenemos un TitleDescripción para hacer textos
+
+[33mcommit 84e8d1598db4ee2a3ad5d9d135f21a82bf6bfce5[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Sat Oct 19 04:14:51 2024 -0500
+
+    Index acabado
+
+[33mcommit 98298c6426bb8df0edef470246e659ee6f86f843[m
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Sat Oct 19 04:13:33 2024 -0500
+
+    cambios ahora si bacanes para empezar a hacer las ramas
+
+[33mcommit 04cde9c663e8d48151319873dd38f4030edc2ec1[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Sat Oct 19 04:09:25 2024 -0500
+
+    Código header corregido y responsivo a las demás páginas
+
+[33mcommit 5d53273df3f561832e5e7a339e0f5469f7012aae[m
+Author: Joseph <jalvareza21_1@unc.edu.pe>
+Date:   Sat Oct 19 03:05:54 2024 -0500
+
+    link de paginas bacanes
+
+[33mcommit e57ac528e24e05874238be72a193394bb8f83b55[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Sat Oct 19 02:05:12 2024 -0500
+
+    Commit previo a la creación de varias páginas
+
+[33mcommit e00b51a9f3cd5fbd3b0f18f171a536d30add57c5[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Sat Oct 19 01:44:05 2024 -0500
+
+    Parte de header actualizada
+
+[33mcommit f09191997b41341421ac208b246d1a6be054a351[m
+Merge: eac61bf 4fa2731
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Fri Oct 18 03:33:16 2024 -0500
+
+    Merge branch 'mainelsebasto'
+
+[33mcommit 4fa2731fe6286a58beff2b0f1e44fefb7a0c5584[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Fri Oct 18 03:30:52 2024 -0500
+
+    Olvidé el media query xd
+
+[33mcommit eac61bf1c3c63652e34e9e0c0a39212fdd8dea67[m
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Fri Oct 18 03:29:24 2024 -0500
+
+    Finalización primer día de desarrollo :) 18/10/24 3:30am
+
+[33mcommit 609ca116109d31931b174fb54479bfb793fc8fd1[m
+Merge: 37c41eb c9f7424
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Fri Oct 18 03:23:26 2024 -0500
+
+    Merge branch 'maineusepe'
+
+[33mcommit 37c41eb9cee6131f8513cd8e6e43a04109fc868a[m
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Fri Oct 18 03:19:12 2024 -0500
+
+    Merge uno corregido
+
+[33mcommit 47113745d008fa8164785d34ead93cd84f4e58bc[m
+Merge: cf1da51 eaa67fb
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Fri Oct 18 03:04:17 2024 -0500
+
+    Merge branch 'mainelsebasto'
+
+[33mcommit cf1da51c2fcd911ddc86b94e041ea0cdbfd5780f[m
+Author: Enzo <cfratia21_1@unc.edu.pe>
+Date:   Fri Oct 18 02:53:17 2024 -0500
+
+    primer avance descripción de la empresa y slider de paquetes, además creación de la data paquetes
+
+[33mcommit c9f74240a17e3c5dc343ca22dd753c5d20281f82[m
+Author: Joseph <jalvareza21_1@unc.edu.pe>
+Date:   Fri Oct 18 02:46:20 2024 -0500
+
+    Tours y Footer 2 xdxd
+
+[33mcommit 69d240f3e1bb6bc6570ad7eaa28c670d6764b2d2[m
+Author: Joseph <jalvareza21_1@unc.edu.pe>
+Date:   Fri Oct 18 02:34:06 2024 -0500
+
+    Tours y Footer
+
+[33mcommit eaa67fb1a92bab594bb835c22ff32aa6526fe180[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Fri Oct 18 02:29:16 2024 -0500
+
+    Primer Avance Terminado, Header y SliderTop
+
+[33mcommit fe419b95fb29ad729e9d0b24dc3eb6fc4660a50e[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Thu Oct 17 23:45:10 2024 -0500
+
+    Commit header primer avance
+
+[33mcommit 3046aa24fea733c7dc5f339b2cec1c09aa27e4dc[m[33m ([m[1;32mmainelsebasto[m[33m)[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Wed Oct 16 22:32:16 2024 -0500
+
+    Primer Commit subiendo estructura funcional
+
+[33mcommit 71b6bb50a75fb9e6d6071aa478b672ffdcfe0ef6[m
+Author: sebas7961 <rlescanon21_1@unc.edu.pe>
+Date:   Wed Oct 16 22:25:45 2024 -0500
+
+    Primer Commit: subiendo estructura funcional
+
+[33mcommit bb06cbf1f057010365714c00a1873a59cbf495ab[m
+Author: Joseph <jalvareza21_1@unc.edu.pe>
+Date:   Wed Oct 16 22:00:13 2024 -0500
+
+    Primer commit

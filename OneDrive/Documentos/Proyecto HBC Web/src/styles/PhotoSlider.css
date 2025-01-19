@@ -1,0 +1,176 @@
+.image-slider {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.slider-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.includes-section ul {
+  display: block; /* Asegura que no haya flex o grid interfiriendo */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay .swiper-slide {
+  height: auto;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-image-wrapper {
+  height: auto;
+  content: "";
+  height: 100%;
+  width: 100%;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para la imagen en modo fullscreen */
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 75vw;
+  object-fit: contain;
+  display: block;
+}
+
+/* Botón para cerrar el modal */
+.close-button {
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  background: transparent;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.close-button svg {
+  width: min(6vw, 2.6rem);
+  height: min(6vw, 2.6rem);
+  color: rgb(216, 216, 216);
+}
+
+/* Asegura que el slider en fullscreen ocupe todo el espacio */
+.fullscreen-slider {
+  width: 100%;
+  height: 100%;
+}
+
+/* Flechas de navegación en el modal de pantalla completa */
+.fullscreen-slider .swiper-button-prev,
+.fullscreen-slider .swiper-button-next {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+/* Posicionamiento de las flechas en el modal */
+.fullscreen-slider .swiper-button-prev {
+  left: 10px;
+}
+
+.fullscreen-slider .swiper-button-next {
+  right: 10px;
+}
+
+/* Para tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .image-slider {
+    max-width: 90%;
+  }
+
+  .slider-image {
+    max-width: 100%;
+    height: 400px;
+  }
+}
+
+/* Para pantallas pequeñas y móviles */
+@media (max-width: 768px) {
+  .image-slider {
+    padding: 10px;
+  }
+
+  .slider-image {
+    max-width: 100%;
+    height: 500px;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .image-slider {
+    padding: 10px;
+  }
+
+  .slider-image {
+    max-width: 100%;
+    height: 400px;
+  }
+}
