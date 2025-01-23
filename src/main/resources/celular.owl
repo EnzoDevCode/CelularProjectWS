@@ -1,0 +1,22 @@
+@prefix ex: <http://example.org/celular#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Clases
+ex:Celular a owl:Class .
+ex:Marca a owl:Class .
+ex:SistemaOperativo a owl:Class .
+
+# Propiedades de los celulares
+ex:tieneMarca a owl:ObjectProperty ;
+    rdfs:domain ex:Celular ;
+    rdfs:range ex:Marca .
+
+ex:usaSistemaOperativo a owl:ObjectProperty ;
+    rdfs:domain ex:Celular ;
+    rdfs:range ex:SistemaOperativo .
+
+ex:tienePrecio a owl:DatatypeProperty ;
+    rdfs:domain ex:Celular ;
+    rdfs:range xsd:decimal .
