@@ -3,7 +3,7 @@ import ImageBackground from "../components/ImageBackground";
 import Par from "../components/Par";
 import TitleSubtitle from "../components/TitleSubtitle";
 import VerticalSeparator from "../components/VerticalSeparator";
-import imagenFondo from "../images/aventura-selva.jpg";
+import imagenFondo from "../images/espana1.jpg";
 import "../styles/Contactanos.css";
 
 const Contactanos = () => {
@@ -11,17 +11,9 @@ const Contactanos = () => {
     <div>
       <ImageBackground url={imagenFondo} />
       <VerticalSeparator altura="5" />
-      <TitleSubtitle
-        title="Contáctanos"
-        position="centro"
-      />
-      <Par position="centro">
-        En FADA Tours ofrecemos experiencias inolvidables en la Amazonía,
-        brindando entretenimiento y satisfacción en cada aventura. Contáctanos a
-        través de nuestros canales de atención para planificar tu próximo viaje
-        a la selva peruana.
-      </Par>
+      <TitleSubtitle title="Contáctanos" position="centro" />
       <VerticalSeparator altura="5" />
+      
       <div className="contactanos-container">
         <div className="contact-info">
           <div className="contact-item">
@@ -30,27 +22,20 @@ const Contactanos = () => {
               <h3>Correo Electrónico</h3>
             </div>
             <p>
-              <a
-                href="mailto:fadatours.info@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                fadatours.info@gmail.com
+              <a href="mailto:contacto@hbctravelperu.com" target="_blank" rel="noopener noreferrer">
+                contacto@hbctravelperu.com
               </a>
             </p>
           </div>
+
           <div className="contact-item">
             <div className="contact-header">
               <i className="fab fa-whatsapp"></i>
               <h3>WhatsApp</h3>
             </div>
             <p>
-              <a
-                href="https://wa.me/51941950860"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                +51 941 950 860
+              <a href="https://wa.me/51943385957" target="_blank" rel="noopener noreferrer">
+                +51 943 385 957
               </a>
             </p>
           </div>
@@ -59,29 +44,34 @@ const Contactanos = () => {
               <i className="fab fa-facebook"></i>
               <h3>Facebook</h3>
             </div>
-
             <p>
-              <a
-                href="https://www.facebook.com/profile.php?id=61567164249377"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                FADA Tours en Facebook
+              <a href="https://www.facebook.com/hbctraveI" target="_blank" rel="noopener noreferrer">
+                HBC Travel en Facebook
               </a>
             </p>
           </div>
+
+          {/* 📸 Instagram */}
           <div className="contact-item">
             <div className="contact-header">
               <i className="fab fa-instagram"></i>
               <h3>Instagram</h3>
             </div>
             <p>
-              <a
-                href="https://www.instagram.com/fadatours/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                FADA Tours en Instagram
+              <a href="https://www.instagram.com/hbc.travel.peru/" target="_blank" rel="noopener noreferrer">
+                @hbc.travel.peru
+              </a>
+            </p>
+          </div>
+
+          <div className="contact-item">
+            <div className="contact-header">
+              <i className="fab fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+            <p>
+              <a href="https://www.tiktok.com/@hbc.travel.go?lang=es" target="_blank" rel="noopener noreferrer">
+                HBC Travel en TikTok
               </a>
             </p>
           </div>
@@ -92,23 +82,10 @@ const Contactanos = () => {
         <div className="additional-info">
           <div className="info-item">
             <div className="contact-header">
-              <i className="fas fa-headset"></i>
-              <h3>Atención al Cliente</h3>
-            </div>
-
-            <p>
-              Nuestro equipo está siempre disponible para ayudarte a planificar
-              tu experiencia en la Amazonía. Contáctanos por nuestras redes sociales y
-              te responderemos a la brevedad.
-            </p>
-          </div>
-          <div className="info-item">
-            <div className="contact-header">
               <i className="fas fa-credit-card"></i>
               <h3>Medios de Pago</h3>
             </div>
-
-            <p>Puedes pagar con estos medios de pago tras cotizar mediante whatsapp</p>
+            <p>Puedes pagar con estos métodos tras cotizar por WhatsApp:</p>
             <ul className="payment-icons-contact">
               <li>
                 Efectivo:
@@ -132,19 +109,9 @@ const Contactanos = () => {
               </li>
             </ul>
           </div>
-          <div className="info-item">
-            <div className="contact-header">
-              <i className="fas fa-lock"></i>
-              <h3>Datos Seguros</h3>
-            </div>
-
-            <p>
-              La seguridad de tus datos es nuestra prioridad. Navega con
-              tranquilidad, tu información está protegida y segura.
-            </p>
-          </div>
         </div>
       </div>
+
       <VerticalSeparator altura="9" />
     </div>
   );

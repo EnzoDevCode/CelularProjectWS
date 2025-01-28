@@ -67,10 +67,11 @@ footer {
   justify-content: flex-end;
   flex: 1;
   max-width: 590px;
+  margin-left: 11vw;
 }
 
 .footer-logo-section img {
-  height: 80px;
+  height: 130px;
   transition: transform 0.3s ease;
 }
 
@@ -186,6 +187,7 @@ footer {
   .footer-logo-section {
     justify-content: center;
     margin-top: 15px;
+    
   }
 
   .footer-logo-section img {

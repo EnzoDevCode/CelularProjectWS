@@ -46,7 +46,7 @@ const Footer = () => {
         {/* Columna Derecha */}
         <div className="footer-logo-section">
           <img
-            src={require("../images/images-logo/imagotipoBlanco.png")}
+            src={require("../images/images-logo/logoblancoHBC.png")}
             alt="HBC Travel"
           />
         </div>

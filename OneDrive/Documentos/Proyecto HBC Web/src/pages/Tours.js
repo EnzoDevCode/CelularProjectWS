@@ -2,14 +2,12 @@ import React from "react";
 import ContenedorPaquete from "../components/ContenedorPaquete";
 import ContenedorTour from "../components/ContenedorTour";
 import FAQs from "../components/FAQs";
-import ImageBackground from "../components/ImageBackground"; // Asegúrate de importar ImageBackground
+import ImageBackground from "../components/ImageBackground";
 import PaqueteSlider from "../components/PaqueteSlider";
 import Question from "../components/Question";
 import TitleSubtitle from "../components/TitleSubtitle";
-import TourCard from "../components/TourCard"; // Importa el componente de la tarjeta
-import TourSlider from "../components/TourSlider";
 import VerticalSeparator from "../components/VerticalSeparator";
-import { tours } from "../data/tourData"; // Importa los datos desde tourData.js
+import { tours } from "../data/tourData"; 
 import imagenHeader from "../images/images-tour/principal.jpg";
 import "../styles/Tours.css";
 

@@ -49,13 +49,13 @@ const TopHeader = () => {
       <div className="topheadercontent">
         <ul className="contact">
           <li className="hide-on-mobile">
-            <a href="https://www.facebook.com/profile.php?id=61567164249377" C>
+            <a href="https://www.facebook.com/hbctraveI" C>
               <i className="fab fa-facebook"></i>
             </a>
           </li>
           <li className="hide-on-mobile">
           <a
-  href="https://www.instagram.com/fadatours/"
+  href="https://www.instagram.com/hbc.travel.peru/"
   target="_blank"
   rel="noopener noreferrer"
 >
@@ -63,18 +63,18 @@ const TopHeader = () => {
 </a>
           </li>
           <li>
-    <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.tiktok.com/@hbc.travel.go?lang=es" target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon icon={faTiktok} />
     </a>
   </li>
   <li>
   <a
-    href="https://wa.me/51941950860"
+    href="https://wa.me/51943385957"
     target="_blank"
     rel="noopener noreferrer"
   >
     Contáctanos
-    <i className="fab fa-whatsapp whatsapp-icon"></i> {/* Clase específica */}
+    <i className="fab fa-whatsapp whatsapp-icon"></i> 
   </a>
 </li>
           

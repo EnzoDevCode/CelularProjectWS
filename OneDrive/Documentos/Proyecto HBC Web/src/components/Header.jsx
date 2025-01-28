@@ -7,8 +7,10 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { paquetes } from "../data/paquetesData";
+import { interData } from "../data/interData";  // Importa Paquetes Internacionales
+import { nacData } from "../data/nacData";  // Importa Paquetes Nacionales
 import { tours } from "../data/tourData";
-import logo from "../images/images-logo/imagotipoBlanco.png";
+import logo from "../images/images-logo/logoblancoHBC.png";
 import "../styles/Header.css";
 
 const Header = () => {
@@ -123,26 +125,14 @@ const Header = () => {
           <li className="nosotrosmenu">
             <Link to="/nosotros">Nosotros</Link>
           </li>
-          <li
-            className="toursmenu"
-            onMouseEnter={showToursMenu}
-            onMouseLeave={hideToursMenu}
-          >
+          {/* ====== Destinos ====== */}
+          <li className="toursmenu" onMouseEnter={() => setIsToursMenuVisible(true)} onMouseLeave={() => setIsToursMenuVisible(false)}>
             <Link to="/destinos">
-              Destinos
-              <i className="fa fa-chevron-down">
-                <span className="menudesplegable"></span>
-              </i>
+              Destinos <i className="fa fa-chevron-down"></i>
             </Link>
-            <ul
-              className={`submenu menutourul submenutours ${
-                isToursMenuVisible ? "visible" : ""
-              }`}
-              onMouseEnter={showToursMenu}
-              onMouseLeave={hideToursMenu}
-            >
-              <div className={`submenucontainer ${activeTourId ? "hovered-tours" : ""}`}>
-                {
+            {isToursMenuVisible && (
+              <ul className="submenu menutourul submenutours">
+                <div className={`submenucontainer ${activeTourId ? "hovered-tours" : ""}`}>
                   <Swiper
                     onSwiper={(swiper) => (toursSwiperRef.current = swiper)}
                     modules={[Navigation, Autoplay]}
@@ -151,159 +141,89 @@ const Header = () => {
                     autoplay={{ delay: 2500, disableOnInteraction: false }}
                     loop={true}
                     navigation={true}
-                    onSlideChange={handleSlideChangeTours}
-                    className={activeTourId ? "has-active-card-tours" : ""}
                   >
                     {tours.map((tour) => (
                       <SwiperSlide key={tour.id}>
                         <Link to={`/tours/${tour.link}`}>
-                          <div
-                            className={`card ${activeTourId === tour.id ? "active" : ""}`}
-                            onMouseEnter={() => handleMouseEnterTours(tour.id)}
-                            onMouseLeave={handleMouseLeaveTours}
-                          >
-                            <img src={tour.imagenPrincipal} alt={tour.nombre} />
+                          <div className={`card ${activeTourId === tour.id ? "active" : ""}`}>
+                            <img src={tour.imagenPrincipal} alt={tour.title} />
                             <div className="card-content">
                               <h4>{tour.title}</h4>
-                              <p>{truncateText(tour.description, 100, "...")}</p>
+                              <p>{truncateText(tour.description, 100)}</p>
                             </div>
                           </div>
                         </Link>
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                }
-                <div className="progress-bar-container">
-                  <div
-                    className="progress-bar"
-                    style={{ width: `${progressTours}%` }}
-                  ></div>
                 </div>
-              </div>
-            </ul>
+              </ul>
+            )}
           </li>
 
-          <li
-            className="paquetesmenu"
-            onMouseEnter={showPaquetesMenu}
-            onMouseLeave={hidePaquetesMenu}
-          >
-            <Link to="/paquetes">
-              Paquetes<br/>Internacionales
-              <i className="fa fa-chevron-down"></i>
+          {/* ====== Paquetes Internacionales ====== */}
+          <li className="paquetesmenu">
+            <Link to="/paquetes-internacionales">
+              Paquetes<br/>Internacionales <i className="fa fa-chevron-down"></i>
             </Link>
-            <ul
-              className={`submenu menupaquetesul submenupaquetes ${
-                isPaquetesMenuVisible ? "visible" : ""
-              }`}
-              onMouseEnter={showPaquetesMenu}
-              onMouseLeave={hidePaquetesMenu}
-            >
-              <div className={`submenucontainer ${activePaqueteId ? "hovered-paquetes" : ""}`}>
+            <ul className="submenu menupaquetesul submenupaquetes">
+              <div className="submenucontainer">
                 <Swiper
-                  onSwiper={(swiper) => (paquetesSwiperRef.current = swiper)}
+                  onSwiper={(swiper) => (toursSwiperRef.current = swiper)}
                   modules={[Navigation, Autoplay]}
                   slidesPerView={3}
                   spaceBetween={30}
                   autoplay={{ delay: 2500, disableOnInteraction: false }}
                   loop={true}
                   navigation={true}
-                  onSlideChange={handleSlideChangePaquetes}
-                  className={activePaqueteId ? "has-active-card-paquetes" : ""}
                 >
-                  {paquetes.map((paquete) => (
-                    <SwiperSlide key={paquete.nombre}>
-                      <div
-                        className={`card ${activePaqueteId === paquete.id ? "active" : ""}`}
-                        onMouseEnter={() => handleMouseEnterPaquetes(paquete.id)}
-                        onMouseLeave={handleMouseLeavePaquetes}
-                      >
-                        <Link
-                          to={`/paquete/${encodeURIComponent(paquete.nombre)}`}
-                        >
-                          <div className="fotosubmenu">
-                            <img
-                              src={paquete.imagenes[0]}
-                              alt={paquete.nombre}
-                            />
-                          </div>
+                  {interData.map((paquete) => (
+                    <SwiperSlide key={paquete.id}>
+                      <Link to={`/paquete/${encodeURIComponent(paquete.nombre)}`}>
+                        <div className="card">
+                          <img src={paquete.imagenPrincipal} alt={paquete.nombre} />
                           <div className="card-content">
                             <h4>{paquete.nombre}</h4>
-                            <p>{truncateText(paquete.descripcion, 60, "...")}</p>
+                            <p>{truncateText(paquete.descripcion, 60)}</p>
                           </div>
-                        </Link>
-                      </div>
+                        </div>
+                      </Link>
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                <div className="progress-bar-container">
-                  <div
-                    className="progress-bar"
-                    style={{ width: `${progressPaquetes}%` }}
-                  ></div>
-                </div>
               </div>
             </ul>
           </li>
-          <li
-            className="paquetesmenu"
-            onMouseEnter={showPaquetesMenu}
-            onMouseLeave={hidePaquetesMenu}
-          >
-            <Link to="/paquetes">
-              Paquetes<br/>Nacionales
-              <i className="fa fa-chevron-down"></i>
+          {/* ====== Paquetes Nacionales ====== */}
+          <li className="paquetesmenu">
+            <Link to="/paquetes-nacionales">
+              Paquetes<br/>Nacionales <i className="fa fa-chevron-down"></i>
             </Link>
-            <ul
-              className={`submenu menupaquetesul submenupaquetes ${
-                isPaquetesMenuVisible ? "visible" : ""
-              }`}
-              onMouseEnter={showPaquetesMenu}
-              onMouseLeave={hidePaquetesMenu}
-            >
-              <div className={`submenucontainer ${activePaqueteId ? "hovered-paquetes" : ""}`}>
+            <ul className="submenu menupaquetesul submenupaquetes">
+              <div className="submenucontainer">
                 <Swiper
-                  onSwiper={(swiper) => (paquetesSwiperRef.current = swiper)}
+                  onSwiper={(swiper) => (toursSwiperRef.current = swiper)}
                   modules={[Navigation, Autoplay]}
                   slidesPerView={3}
                   spaceBetween={30}
                   autoplay={{ delay: 2500, disableOnInteraction: false }}
                   loop={true}
                   navigation={true}
-                  onSlideChange={handleSlideChangePaquetes}
-                  className={activePaqueteId ? "has-active-card-paquetes" : ""}
                 >
-                  {paquetes.map((paquete) => (
-                    <SwiperSlide key={paquete.nombre}>
-                      <div
-                        className={`card ${activePaqueteId === paquete.id ? "active" : ""}`}
-                        onMouseEnter={() => handleMouseEnterPaquetes(paquete.id)}
-                        onMouseLeave={handleMouseLeavePaquetes}
-                      >
-                        <Link
-                          to={`/paquete/${encodeURIComponent(paquete.nombre)}`}
-                        >
-                          <div className="fotosubmenu">
-                            <img
-                              src={paquete.imagenes[0]}
-                              alt={paquete.nombre}
-                            />
-                          </div>
+                  {nacData.map((paquete) => (
+                    <SwiperSlide key={paquete.id}>
+                      <Link to={`/paquete/${encodeURIComponent(paquete.nombre)}`}>
+                        <div className="card">
+                          <img src={paquete.imagenPrincipal} alt={paquete.nombre} />
                           <div className="card-content">
                             <h4>{paquete.nombre}</h4>
-                            <p>{truncateText(paquete.descripcion, 60, "...")}</p>
+                            <p>{truncateText(paquete.descripcion, 60)}</p>
                           </div>
-                        </Link>
-                      </div>
+                        </div>
+                      </Link>
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                <div className="progress-bar-container">
-                  <div
-                    className="progress-bar"
-                    style={{ width: `${progressPaquetes}%` }}
-                  ></div>
-                </div>
               </div>
             </ul>
           </li>
