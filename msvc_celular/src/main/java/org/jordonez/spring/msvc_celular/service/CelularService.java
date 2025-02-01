@@ -34,8 +34,11 @@ public class CelularService {
                 .addProperty(modelo.createProperty(SCHEMA, "storage"), celular.getAlmacenamiento())
                 .addProperty(modelo.createProperty(SCHEMA, "battery"), celular.getBateria())
                 .addProperty(modelo.createProperty(SCHEMA, "processor"), celular.getProcesador())
-                .addProperty(modelo.createProperty(SCHEMA, "screen"), celular.getPantalla())
-                .addProperty(modelo.createProperty(SCHEMA, "operatingSystem"), celular.getSistemaOperativo());
+                .addProperty(modelo.createProperty(SCHEMA, "screen"), celular.getPantalla());
+        // Omitir la propiedad operatingSystem para que la inferencia la deduzca automáticamente
+        if (celular.getSistemaOperativo() != null) {
+            celularResource.addProperty(modelo.createProperty(SCHEMA, "operatingSystem"), celular.getSistemaOperativo());
+        }
 
         guardarEnArchivo();
     }
@@ -43,7 +46,7 @@ public class CelularService {
     private void guardarEnArchivo() {
         try (FileWriter out = new FileWriter(RDF_FILE)) {
             modelo.setNsPrefix("schema", SCHEMA); // ✅ Asegurar prefijo correcto en RDF
-            modelo.write(out, "RDF/XML-ABBREV");  // ✅ Guardar en formato con `rdf:Description`
+            modelo.write(out, "RDF/XML");  // ✅ Guardar en formato con `rdf:Description`
         } catch (IOException e) {
             e.printStackTrace();
         }

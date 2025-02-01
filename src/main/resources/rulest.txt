@@ -1,0 +1,5 @@
+# Regla 1: Si algo es un Apple, entonces usa iOS
+[AppleUsesIOS: (?x rdf:type schema:Celular), (?x schema:brand "Apple") -> (?x schema:operatingSystem "iOS")]
+
+# Regla 2: Si algo es un Samsung, entonces usa Android
+[SamsungUsesAndroid: (?x rdf:type schema:Celular), (?x schema:brand "Samsung") -> (?x schema:operatingSystem "Android")]
