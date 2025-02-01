@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class JenaConfig {
@@ -37,5 +39,26 @@ public class JenaConfig {
         }
         return listaResultados;
     }
+
+    public static List<Map<String, Object>> obtenerResultadosComoJsonLD(String consultaSPARQL) {
+        ResultSet resultados = ejecutarConsulta(consultaSPARQL);
+        List<Map<String, Object>> listaResultados = new ArrayList<>();
+
+        while (resultados.hasNext()) {
+            QuerySolution solucion = resultados.nextSolution();
+            Map<String, Object> jsonLD = new HashMap<>();
+
+            jsonLD.put("@context", "http://schema.org");
+            jsonLD.put("@type", "Product");
+            jsonLD.put("name", solucion.get("nombre").toString());
+            jsonLD.put("brand", solucion.get("marca").toString());
+            jsonLD.put("price", solucion.get("precio").toString());
+            jsonLD.put("category", solucion.get("categoria").toString());
+
+            listaResultados.add(jsonLD);
+        }
+        return listaResultados;
+    }
+
 }
 
