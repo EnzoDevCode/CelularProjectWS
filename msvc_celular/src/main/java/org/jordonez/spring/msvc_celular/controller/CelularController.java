@@ -29,18 +29,26 @@ public class CelularController {
         String consulta = """
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX schema: <http://schema.org/> 
-        SELECT ?producto ?nombre ?marca ?precio ?categoria
+        SELECT ?producto ?nombre ?marca ?precio ?categoria ?descripcion ?ram ?almacenamiento ?bateria ?procesador ?pantalla ?sistemaOperativo
         WHERE {
-            ?producto rdf:type schema:Product .
+            ?producto rdf:type schema:Celular .
             ?producto schema:name ?nombre .
             OPTIONAL { ?producto schema:brand ?marca }.
             OPTIONAL { ?producto schema:price ?precio }.
             OPTIONAL { ?producto schema:category ?categoria }.
+            OPTIONAL { ?producto schema:description ?descripcion }.
+            OPTIONAL { ?producto schema:ram ?ram }.
+            OPTIONAL { ?producto schema:storage ?almacenamiento }.
+            OPTIONAL { ?producto schema:battery ?bateria }.
+            OPTIONAL { ?producto schema:processor ?procesador }.
+            OPTIONAL { ?producto schema:screen ?pantalla }.
+            OPTIONAL { ?producto schema:operatingSystem ?sistemaOperativo }.
         }
     """;
 
         return JenaConfig.obtenerResultadosComoJsonLD(consulta);
     }
+
 
 
 }

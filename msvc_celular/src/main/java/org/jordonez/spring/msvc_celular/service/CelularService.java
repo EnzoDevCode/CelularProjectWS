@@ -24,11 +24,18 @@ public class CelularService {
     public void agregarCelular(Celular celular) {
         // ✅ Crear recurso RDF con `rdf:type schema:Product`
         Resource celularResource = modelo.createResource(BASE_URI + celular.getId())
-                .addProperty(RDF.type, modelo.createResource(SCHEMA + "Celular")) // 🔴 Añadir rdf:type schema:Product
+                .addProperty(RDF.type, modelo.createResource(SCHEMA + "Celular"))
                 .addProperty(modelo.createProperty(SCHEMA, "name"), celular.getNombre())
                 .addProperty(modelo.createProperty(SCHEMA, "brand"), celular.getMarca())
                 .addProperty(modelo.createProperty(SCHEMA, "price"), celular.getPrecio())
-                .addProperty(modelo.createProperty(SCHEMA, "category"), celular.getCategoria());
+                .addProperty(modelo.createProperty(SCHEMA, "category"), celular.getCategoria())
+                .addProperty(modelo.createProperty(SCHEMA, "description"), celular.getDescripcion())
+                .addProperty(modelo.createProperty(SCHEMA, "ram"), celular.getRam())
+                .addProperty(modelo.createProperty(SCHEMA, "storage"), celular.getAlmacenamiento())
+                .addProperty(modelo.createProperty(SCHEMA, "battery"), celular.getBateria())
+                .addProperty(modelo.createProperty(SCHEMA, "processor"), celular.getProcesador())
+                .addProperty(modelo.createProperty(SCHEMA, "screen"), celular.getPantalla())
+                .addProperty(modelo.createProperty(SCHEMA, "operatingSystem"), celular.getSistemaOperativo());
 
         guardarEnArchivo();
     }

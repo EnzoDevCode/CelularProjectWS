@@ -49,16 +49,47 @@ public class JenaConfig {
             Map<String, Object> jsonLD = new HashMap<>();
 
             jsonLD.put("@context", "http://schema.org");
-            jsonLD.put("@type", "Product");
-            jsonLD.put("name", solucion.get("nombre").toString());
-            jsonLD.put("brand", solucion.get("marca").toString());
-            jsonLD.put("price", solucion.get("precio").toString());
-            jsonLD.put("category", solucion.get("categoria").toString());
+            jsonLD.put("@type", "Celular");
+
+            if (solucion.contains("nombre")) {
+                jsonLD.put("name", solucion.get("nombre").toString());
+            }
+            if (solucion.contains("marca")) {
+                jsonLD.put("brand", solucion.get("marca").toString());
+            }
+            if (solucion.contains("precio")) {
+                jsonLD.put("price", solucion.get("precio").toString());
+            }
+            if (solucion.contains("categoria")) {
+                jsonLD.put("category", solucion.get("categoria").toString());
+            }
+            if (solucion.contains("descripcion")) {
+                jsonLD.put("description", solucion.get("descripcion").toString());
+            }
+            if (solucion.contains("ram")) {
+                jsonLD.put("ram", solucion.get("ram").toString());
+            }
+            if (solucion.contains("almacenamiento")) {
+                jsonLD.put("storage", solucion.get("almacenamiento").toString());
+            }
+            if (solucion.contains("bateria")) {
+                jsonLD.put("battery", solucion.get("bateria").toString());
+            }
+            if (solucion.contains("procesador")) {
+                jsonLD.put("processor", solucion.get("procesador").toString());
+            }
+            if (solucion.contains("pantalla")) {
+                jsonLD.put("screen", solucion.get("pantalla").toString());
+            }
+            if (solucion.contains("sistemaOperativo")) {
+                jsonLD.put("operatingSystem", solucion.get("sistemaOperativo").toString());
+            }
 
             listaResultados.add(jsonLD);
         }
         return listaResultados;
     }
+
 
 }
 
