@@ -1,0 +1,10 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://schema.org/">
+  <rdf:Description rdf:about="http://example.com/celular/123">
+    <j.0:category>Smartphone</j.0:category>
+    <j.0:price>999.99</j.0:price>
+    <j.0:brand>Samsung</j.0:brand>
+    <j.0:name>Samsung Galaxy S23</j.0:name>
+  </rdf:Description>
+</rdf:RDF>
