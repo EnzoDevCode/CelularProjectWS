@@ -1,2 +1,15 @@
-[AppleUsesIOS: (?x rdf:type schema:Celular), (?x schema:brand "Apple") -> (?x schema:operatingSystem "iOS")]
-[SamsungUsesAndroid: (?x rdf:type schema:Celular), (?x schema:brand "Samsung") -> (?x schema:operatingSystem "Android")]
+# Regla 1: Si un celular es de la marca Apple, entonces usa iOS
+[AppleUsesIOS: 
+    (?x rdf:type <http://schema.org/Celular>), 
+    (?x <http://schema.org/brand> "Apple") 
+    -> 
+    (?x <http://schema.org/operatingSystem> "iOS")
+]
+
+# Regla 2: Si un celular es de la marca Samsung, entonces usa Android
+[SamsungUsesAndroid: 
+    (?x rdf:type <http://schema.org/Celular>), 
+    (?x <http://schema.org/brand> "Samsung") 
+    -> 
+    (?x <http://schema.org/operatingSystem> "Android")
+]

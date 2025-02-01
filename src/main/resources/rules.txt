@@ -1,0 +1,13 @@
+@prefix schema: <http://schema.org/> .
+
+[AppleUsesIOS: 
+    (?x rdf:type schema:Celular), 
+    (?x schema:brand "Apple") 
+    -> (?x schema:operatingSystem "iOS")
+]
+
+[SamsungUsesAndroid: 
+    (?x rdf:type schema:Celular), 
+    (?x schema:brand "Samsung") 
+    -> (?x schema:operatingSystem "Android")
+]
