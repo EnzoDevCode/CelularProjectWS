@@ -1,6 +1,17 @@
 package org.jordonez.spring.msvc_celular.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("Celular")
 public class Celular {
+
+    @JsonProperty("@context")
+    private final String context = "http://schema.org";
+
+    @JsonProperty("@type")
+    private final String type = "Celular";
+
     private String id;
     private String nombre;
     private String marca;
@@ -33,6 +44,8 @@ public class Celular {
     }
 
     // Getters y Setters
+    public String getContext() { return context; }
+    public String getType() { return type; }
     public String getId() { return id; }
     public String getNombre() { return nombre; }
     public String getMarca() { return marca; }

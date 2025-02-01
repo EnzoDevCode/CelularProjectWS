@@ -25,7 +25,7 @@ public class CelularController {
     }
 
     @GetMapping("/search")
-    public List<Map<String, Object>> buscarCelularesSPARQL() {
+    public String buscarCelularesSPARQL() {
         String consulta = """
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX schema: <http://schema.org/> 

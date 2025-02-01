@@ -1,10 +1,16 @@
 package org.jordonez.spring.msvc_celular.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.util.FileManager;
+import org.jordonez.spring.msvc_celular.model.Celular;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
@@ -40,54 +46,19 @@ public class JenaConfig {
         return listaResultados;
     }
 
-    public static List<Map<String, Object>> obtenerResultadosComoJsonLD(String consultaSPARQL) {
-        ResultSet resultados = ejecutarConsulta(consultaSPARQL);
-        List<Map<String, Object>> listaResultados = new ArrayList<>();
-
-        while (resultados.hasNext()) {
-            QuerySolution solucion = resultados.nextSolution();
-            Map<String, Object> jsonLD = new HashMap<>();
-
-            jsonLD.put("@context", "http://schema.org");
-            jsonLD.put("@type", "Celular");
-
-            if (solucion.contains("nombre")) {
-                jsonLD.put("name", solucion.get("nombre").toString());
-            }
-            if (solucion.contains("marca")) {
-                jsonLD.put("brand", solucion.get("marca").toString());
-            }
-            if (solucion.contains("precio")) {
-                jsonLD.put("price", solucion.get("precio").toString());
-            }
-            if (solucion.contains("categoria")) {
-                jsonLD.put("category", solucion.get("categoria").toString());
-            }
-            if (solucion.contains("descripcion")) {
-                jsonLD.put("description", solucion.get("descripcion").toString());
-            }
-            if (solucion.contains("ram")) {
-                jsonLD.put("ram", solucion.get("ram").toString());
-            }
-            if (solucion.contains("almacenamiento")) {
-                jsonLD.put("storage", solucion.get("almacenamiento").toString());
-            }
-            if (solucion.contains("bateria")) {
-                jsonLD.put("battery", solucion.get("bateria").toString());
-            }
-            if (solucion.contains("procesador")) {
-                jsonLD.put("processor", solucion.get("procesador").toString());
-            }
-            if (solucion.contains("pantalla")) {
-                jsonLD.put("screen", solucion.get("pantalla").toString());
-            }
-            if (solucion.contains("sistemaOperativo")) {
-                jsonLD.put("operatingSystem", solucion.get("sistemaOperativo").toString());
-            }
-
-            listaResultados.add(jsonLD);
+    public static String obtenerResultadosComoJsonLD(String consultaSPARQL) {
+        Model modelo = ModelFactory.createDefaultModel();
+        try (InputStream in = FileManager.get().open(RDF_FILE)) {
+            modelo.read(in, null);
+        } catch (Exception e) {
+            throw new RuntimeException("Error leyendo el archivo RDF", e);
         }
-        return listaResultados;
+
+        // Convertir el modelo RDF a JSON-LD directamente
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        RDFDataMgr.write(outputStream, modelo, RDFFormat.JSONLD);
+
+        return outputStream.toString();
     }
 
 
