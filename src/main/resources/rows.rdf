@@ -2,6 +2,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="http://schema.org/">
   <schema:Celular rdf:about="http://example.com/celular/035">
+    <schema:operatingSystem>iOS</schema:operatingSystem>
     <schema:brand>Apple</schema:brand>
     <schema:name>iPhone 15</schema:name>
     <schema:screen>6.1 pulgadas OLED</schema:screen>
@@ -14,6 +15,7 @@
     <schema:price>1299.99</schema:price>
   </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/019">
+    <schema:operatingSystem>iOS</schema:operatingSystem>
     <schema:category>Smartphone</schema:category>
     <schema:screen>6.1 pulgadas OLED</schema:screen>
     <schema:price>1299.99</schema:price>
@@ -25,10 +27,24 @@
     <schema:brand>Apple</schema:brand>
     <schema:storage>128GB</schema:storage>
   </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/050">
+    <schema:operatingSystem>Android</schema:operatingSystem>
+    <schema:screen>6.8 pulgadas AMOLED</schema:screen>
+    <schema:category>Smartphone</schema:category>
+    <schema:ram>12GB</schema:ram>
+    <schema:price>1199.99</schema:price>
+    <schema:storage>256GB</schema:storage>
+    <schema:name>Galaxy S24</schema:name>
+    <schema:description>El nuevo flagship de Samsung con IA integrada.</schema:description>
+    <schema:battery>5000mAh</schema:battery>
+    <schema:brand>Samsung</schema:brand>
+    <schema:processor>Exynos 2400</schema:processor>
+  </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/020">
+    <schema:operatingSystem>iOS</schema:operatingSystem>
     <schema:battery>4000mAh</schema:battery>
-    <schema:storage>128GB</schema:storage>
     <schema:ram>6GB</schema:ram>
+    <schema:storage>128GB</schema:storage>
     <schema:name>iPhone 15</schema:name>
     <schema:description>El último iPhone con tecnología avanzada.</schema:description>
     <schema:category>Smartphone</schema:category>
