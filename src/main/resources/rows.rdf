@@ -25,10 +25,38 @@
     <schema:brand>Apple</schema:brand>
     <schema:storage>128GB</schema:storage>
   </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/null">
+    <schema:category>Smartphone</schema:category>
+    <schema:ram>8</schema:ram>
+    <schema:processor>E5 2660v3</schema:processor>
+    <schema:price>2400</schema:price>
+    <schema:battery>4000</schema:battery>
+    <schema:brand>Iphone</schema:brand>
+    <schema:brand>Apple</schema:brand>
+    <schema:description>DWFERWFRFR</schema:description>
+    <schema:storage>256</schema:storage>
+    <schema:description>fefrf</schema:description>
+    <schema:name>IPhone 14</schema:name>
+    <schema:description>hOLISDASDAS</schema:description>
+    <schema:screen>Oled</schema:screen>
+  </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/040">
+    <schema:storage>256GB</schema:storage>
+    <schema:processor>Snapdragon 8 Gen 3</schema:processor>
+    <schema:screen>6.8 pulgadas AMOLED</schema:screen>
+    <schema:operatingSystem>Android 14</schema:operatingSystem>
+    <schema:description>Un smartphone de gama alta con IA.</schema:description>
+    <schema:battery>4500mAh</schema:battery>
+    <schema:category>Smartphone</schema:category>
+    <schema:name>Samsung Galaxy S24</schema:name>
+    <schema:ram>8GB</schema:ram>
+    <schema:price>1099.99</schema:price>
+    <schema:brand>Samsung</schema:brand>
+  </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/020">
     <schema:battery>4000mAh</schema:battery>
-    <schema:storage>128GB</schema:storage>
     <schema:ram>6GB</schema:ram>
+    <schema:storage>128GB</schema:storage>
     <schema:name>iPhone 15</schema:name>
     <schema:description>El último iPhone con tecnología avanzada.</schema:description>
     <schema:category>Smartphone</schema:category>
