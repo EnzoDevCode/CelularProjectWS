@@ -48,8 +48,5 @@ public class CelularController {
 
         return JenaConfig.obtenerResultadosComoJsonLD(consulta);
     }
-
-
-
 }
 
