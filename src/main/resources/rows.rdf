@@ -1,6 +1,18 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="http://schema.org/">
+  <schema:Celular rdf:about="http://example.com/celular/035">
+    <schema:brand>Apple</schema:brand>
+    <schema:name>iPhone 15</schema:name>
+    <schema:screen>6.1 pulgadas OLED</schema:screen>
+    <schema:processor>A16 Bionic</schema:processor>
+    <schema:battery>4000mAh</schema:battery>
+    <schema:storage>128GB</schema:storage>
+    <schema:description>El último iPhone con tecnología avanzada.</schema:description>
+    <schema:category>Smartphone</schema:category>
+    <schema:ram>6GB</schema:ram>
+    <schema:price>1299.99</schema:price>
+  </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/019">
     <schema:category>Smartphone</schema:category>
     <schema:screen>6.1 pulgadas OLED</schema:screen>
