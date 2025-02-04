@@ -8,7 +8,7 @@
     <schema:processor>A16 Bionic</schema:processor>
     <schema:battery>4000mAh</schema:battery>
     <schema:storage>128GB</schema:storage>
-    <schema:description>El último iPhone con tecnología avanzada.</schema:description>
+    <schema:description>El último iPhone con tecnología avanzada. Tiene 6GB de ram. Además tiene una hamburguesa</schema:description>
     <schema:category>Smartphone</schema:category>
     <schema:ram>6GB</schema:ram>
     <schema:price>1299.99</schema:price>
@@ -17,7 +17,7 @@
     <schema:category>Smartphone</schema:category>
     <schema:screen>6.1 pulgadas OLED</schema:screen>
     <schema:price>1299.99</schema:price>
-    <schema:description>El último iPhone con tecnología avanzada.</schema:description>
+    <schema:description>El último iPhone con tecnología avanzada. También tiene una pantalla grande</schema:description>
     <schema:ram>6GB</schema:ram>
     <schema:processor>A16 Bionic</schema:processor>
     <schema:name>iPhone 15</schema:name>
@@ -31,9 +31,9 @@
     <schema:processor>E5 2660v3</schema:processor>
     <schema:price>2400</schema:price>
     <schema:battery>4000</schema:battery>
-    <schema:brand>Iphone</schema:brand>
     <schema:brand>Apple</schema:brand>
-    <schema:description>DWFERWFRFR</schema:description>
+    <schema:brand>Apple</schema:brand>
+    <schema:description>DWFERWFRFR, este celular tiene una pizza</schema:description>
     <schema:storage>256</schema:storage>
     <schema:description>fefrf</schema:description>
     <schema:name>IPhone 14</schema:name>
