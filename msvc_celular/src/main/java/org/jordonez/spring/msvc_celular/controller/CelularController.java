@@ -39,14 +39,13 @@ public class CelularController {
             @RequestParam(required = false) Integer precioMax,
             @RequestParam(required = false) Integer ramMin
     ) {
-        // 📌 Construcción de la consulta SPARQL
         StringBuilder consulta = new StringBuilder("""
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX schema: <http://schema.org/>
     SELECT ?producto ?nombre ?marca ?precio ?categoria ?descripcion ?ram ?almacenamiento ?bateria ?procesador ?pantalla
     WHERE {
         ?producto rdf:type schema:Celular .
-        ?producto schema:name ?nombre .  # 🔥 Eliminamos OPTIONAL aquí
+        ?producto schema:name ?nombre .  # a
         OPTIONAL { ?producto schema:brand ?marca }.
         OPTIONAL { ?producto schema:price ?precio }.
         OPTIONAL { ?producto schema:category ?categoria }.

@@ -60,13 +60,13 @@ public class JenaConfig {
 
         // 🔥 Ejecutar la consulta SPARQL sobre el modelo RDF
         Query query = QueryFactory.create(consultaSPARQL);
-        Model modeloResultados = ModelFactory.createDefaultModel(); // 🔹 Modelo RDF para guardar los resultados filtrados
+        Model modeloResultados = ModelFactory.createDefaultModel(); //  Modelo RDF para guardar los resultados filtrados
 
         try (QueryExecution qexec = QueryExecutionFactory.create(query, modelo)) {
             ResultSet results = qexec.execSelect();
             QuerySolution solution;
 
-            // 🔹 Convertir resultados a un nuevo modelo RDF
+            //  Convertir resultados a un nuevo modelo RDF
             while (results.hasNext()) {
                 solution = results.nextSolution();
                 modeloResultados.add(modelo.listStatements(solution.getResource("?producto"), null, (String) null));
