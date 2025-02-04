@@ -17,11 +17,10 @@ import org.springframework.web.bind.annotation.*;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "*") // Permitir cualquier origen
+@CrossOrigin(origins = "*") // Permitir cualquier origen aunque esto puede probocar problemas de seguridad en algún momento
 @RestController
 @RequestMapping("/api/celulares")
 public class CelularController {
@@ -97,7 +96,7 @@ public class CelularController {
         consulta.append("}");
 
         // 📌 Log para ver la consulta generada
-        System.out.println("Consulta SPARQL generada:\n" + consulta);
+        logger.info("Consulta SPARQL generada:\n{}", consulta); //usamos logger info
 
         // 📌 Obtener resultados en JSON-LD
         String jsonLdString = JenaConfig.obtenerResultadosComoJsonLD(consulta.toString());
