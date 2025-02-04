@@ -58,4 +58,8 @@ public class Celular {
     public String getProcesador() { return procesador; }
     public String getPantalla() { return pantalla; }
     public String getSistemaOperativo() { return sistemaOperativo; }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

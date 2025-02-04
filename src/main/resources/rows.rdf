@@ -1,23 +1,64 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="http://schema.org/">
-  <schema:Celular rdf:about="http://example.com/celular/null">
-    <schema:operatingSystem>iOS</schema:operatingSystem>
-    <schema:price>6799.00</schema:price>
+  <schema:Celular rdf:about="http://example.com/celular/002">
     <schema:description>Es un celular de muy alta gama, especializado para creadores de contenido, tiene una pantalla muy buena y viene con una pizza</schema:description>
-    <schema:storage>512GB</schema:storage>
-    <schema:category>Smatphone</schema:category>
-    <schema:name>iPhone 16 pro max</schema:name>
+    <schema:screen>Oled</schema:screen>
+    <schema:storage>256</schema:storage>
     <schema:ram>8GB</schema:ram>
+    <schema:price>6799.00</schema:price>
+    <schema:brand>Apple</schema:brand>
+    <schema:screen>6.7</schema:screen>
+    <schema:category>Smartphone</schema:category>
     <schema:sameAs rdf:resource="http://dbpedia.org/resource/Apple_Inc."/>
+    <schema:processor>M4</schema:processor>
+    <schema:processor>E5 2660v3</schema:processor>
+    <schema:description>dsdsd</schema:description>
+    <schema:description>Esto es un celular, efectivamente</schema:description>
+    <schema:name>IPhone 14</schema:name>
+    <schema:category>Smatphone</schema:category>
+    <schema:battery>4000</schema:battery>
+    <schema:price>2400</schema:price>
+    <schema:ram>8</schema:ram>
+    <schema:storage>512GB</schema:storage>
+    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
     <schema:battery>4000mA</schema:battery>
+    <schema:operatingSystem>iOS</schema:operatingSystem>
+    <schema:name>iPhone 16 pro max</schema:name>
+    <schema:name>Joseph</schema:name>
+  </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/null">
+    <schema:category>Smartphone</schema:category>
+    <schema:description>adsadsad</schema:description>
+    <schema:ram>8</schema:ram>
+    <schema:processor>E5 2660v3</schema:processor>
+    <schema:operatingSystem>iOS</schema:operatingSystem>
+    <schema:brand>Nokia</schema:brand>
+    <schema:price>2400</schema:price>
+    <schema:battery>4000</schema:battery>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/Apple_Inc."/>
     <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
     <schema:brand>Apple</schema:brand>
-    <schema:processor>M4</schema:processor>
-    <schema:screen>6.7</schema:screen>
+    <schema:storage>256</schema:storage>
+    <schema:description>asdasdasdasdasfdsagregertgver</schema:description>
+    <schema:name>Pepe</schema:name>
+    <schema:name>Joseph</schema:name>
+    <schema:screen>Oled</schema:screen>
+  </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/cel-1738648415244">
+    <schema:ram>8</schema:ram>
+    <schema:category>Smartphone</schema:category>
+    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
+    <schema:price>2400</schema:price>
+    <schema:battery>4000</schema:battery>
+    <schema:screen>Olin</schema:screen>
+    <schema:processor>E5 2660v3</schema:processor>
+    <schema:description>Pepeyes Asies</schema:description>
+    <schema:storage>256</schema:storage>
+    <schema:name>Pepeyes</schema:name>
+    <schema:brand>Xiaomi</schema:brand>
   </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/001">
-    <schema:operatingSystem>Android</schema:operatingSystem>
     <schema:description>Nuevo flagship de Samsung con IA integrada.</schema:description>
     <schema:category>Smartphone</schema:category>
     <schema:storage>256GB</schema:storage>
@@ -25,10 +66,24 @@
     <schema:name>Samsung Galaxy S24</schema:name>
     <schema:ram>12GB</schema:ram>
     <schema:sameAs rdf:resource="http://dbpedia.org/resource/Samsung"/>
-    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
     <schema:processor>Snapdragon 8 Gen 3</schema:processor>
+    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
     <schema:brand>Samsung</schema:brand>
+    <schema:operatingSystem>Android</schema:operatingSystem>
     <schema:battery>5000mAh</schema:battery>
     <schema:screen>6.8 pulgadas AMOLED</schema:screen>
+  </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/cel-1738648375289">
+    <schema:category>Smartphone</schema:category>
+    <schema:battery>4000</schema:battery>
+    <schema:price>2400</schema:price>
+    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
+    <schema:name>Pepenel</schema:name>
+    <schema:description>Esto es pepenel</schema:description>
+    <schema:screen>dda</schema:screen>
+    <schema:ram>8</schema:ram>
+    <schema:storage>256</schema:storage>
+    <schema:brand>Nokia</schema:brand>
+    <schema:processor>E5 2660v3</schema:processor>
   </schema:Celular>
 </rdf:RDF>

@@ -47,7 +47,17 @@ public class CelularService {
         }
     }
 
+    private String generarIdUnico() {
+        return "cel-" + System.currentTimeMillis();
+    }
+
+
     public void agregarCelular(Celular celular) {
+
+        if (celular.getId() == null || celular.getId().trim().isEmpty()) {
+            celular.setId(generarIdUnico());
+        }
+
         // ✅ Crear recurso RDF con los datos iniciales
         Resource celularResource = modelo.createResource(BASE_URI + celular.getId())
                 .addProperty(RDF.type, modelo.createResource(SCHEMA + "Celular"))
