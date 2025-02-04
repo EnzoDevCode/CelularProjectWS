@@ -7,6 +7,7 @@ import org.apache.jena.reasoner.rulesys.Rule;
 import org.apache.jena.util.FileManager;
 import org.apache.jena.vocabulary.RDF;
 import org.jordonez.spring.msvc_celular.model.Celular;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.*;
 import java.util.List;
@@ -17,12 +18,33 @@ public class CelularService {
     private static final String BASE_URI = "http://example.com/celular/";
     private static final String SCHEMA = "http://schema.org/";
     private static final String RDF_FILE = "src/main/resources/rows.rdf";
+    private static final String RULES_FILE = "src/main/resources/rules.txt";
 
     private Model modelo;
+    private final Reasoner reasoner;
 
     public CelularService() {
         this.modelo = ModelFactory.createDefaultModel();
-        cargarDatosExistentes(); // ✅ Cargar datos previos al iniciar el servicio
+        this.reasoner = cargarReasoner();
+        cargarDatosExistentes();
+    }
+
+    private Reasoner cargarReasoner() {
+        File file = new File(RULES_FILE);
+        if (!file.exists()) {
+            throw new RuntimeException("❌ No se encontró rules.txt en " + file.getAbsolutePath());
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            StringBuilder reglasString = new StringBuilder();
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                reglasString.append(linea).append("\n");
+            }
+            return new GenericRuleReasoner(Rule.parseRules(reglasString.toString()));
+        } catch (IOException e) {
+            throw new RuntimeException("❌ Error leyendo rules.txt", e);
+        }
     }
 
     public void agregarCelular(Celular celular) {
@@ -40,17 +62,41 @@ public class CelularService {
                 .addProperty(modelo.createProperty(SCHEMA, "processor"), celular.getProcesador())
                 .addProperty(modelo.createProperty(SCHEMA, "screen"), celular.getPantalla());
 
+        if ("Apple".equalsIgnoreCase(celular.getMarca())) {
+            celularResource.addProperty(modelo.createProperty(SCHEMA, "sameAs"),
+                    modelo.createResource("http://dbpedia.org/resource/Apple_Inc."));
+        } else if ("Samsung".equalsIgnoreCase(celular.getMarca())) {
+            celularResource.addProperty(modelo.createProperty(SCHEMA, "sameAs"),
+                    modelo.createResource("http://dbpedia.org/resource/Samsung"));
+        } else if ("Huawei".equalsIgnoreCase(celular.getMarca())) {
+            celularResource.addProperty(modelo.createProperty(SCHEMA, "sameAs"),
+                    modelo.createResource("http://dbpedia.org/resource/Huawei"));
+        }
+
+        celularResource.addProperty(modelo.createProperty(SCHEMA, "category"),
+                modelo.createResource("http://www.wikidata.org/entity/Q22686"));
+
+
         // ✅ Aplicar inferencia para completar los atributos faltantes
-        Model inferido = aplicarInferencias(modelo);
+        modelo = aplicarInferencias(modelo);
 
         // ✅ Guardar el RDF con los datos inferidos
-        guardarEnArchivo(inferido);
+        guardarEnArchivo(modelo);
     }
 
     private void guardarEnArchivo(Model model) {
-        try (FileWriter out = new FileWriter(RDF_FILE)) {
-            model.setNsPrefix("schema", SCHEMA); // ✅ Asegurar prefijo correcto en RDF
-            model.write(out, "RDF/XML");  // ✅ Guardar en formato RDF/XML
+        try {
+            model.setNsPrefix("schema", SCHEMA);
+
+            // ✅ Limpiar el archivo antes de guardar
+            File file = new File(RDF_FILE);
+            if (file.exists()) {
+                file.delete();
+            }
+
+            try (FileWriter out = new FileWriter(RDF_FILE, false)) {
+                model.write(out, "RDF/XML");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -75,7 +121,7 @@ public class CelularService {
     }
 
     // ✅ Aplicar inferencias y devolver el modelo modificado
-    private Model aplicarInferencias(Model model) {
+    public Model aplicarInferencias(Model model) {
         File file = new File("src/main/resources/rules.txt");
         System.out.println("🔍 Probando acceso a rules.txt en: " + file.getAbsolutePath());
 
@@ -112,6 +158,11 @@ public class CelularService {
 
         // ✅ Aplicar razonamiento
         InfModel infModel = ModelFactory.createInfModel(razonador, model);
+        infModel.prepare();
         return infModel;
+    }
+
+    public Model getModel() {
+        return modelo;
     }
 }

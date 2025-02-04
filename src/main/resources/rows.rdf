@@ -1,68 +1,34 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="http://schema.org/">
-  <schema:Celular rdf:about="http://example.com/celular/035">
-    <schema:brand>Apple</schema:brand>
-    <schema:name>iPhone 15</schema:name>
-    <schema:screen>6.1 pulgadas OLED</schema:screen>
-    <schema:processor>A16 Bionic</schema:processor>
-    <schema:battery>4000mAh</schema:battery>
-    <schema:storage>128GB</schema:storage>
-    <schema:description>El último iPhone con tecnología avanzada. Tiene 6GB de ram. Además tiene una hamburguesa</schema:description>
-    <schema:category>Smartphone</schema:category>
-    <schema:ram>6GB</schema:ram>
-    <schema:price>1299.99</schema:price>
-  </schema:Celular>
-  <schema:Celular rdf:about="http://example.com/celular/019">
-    <schema:category>Smartphone</schema:category>
-    <schema:screen>6.1 pulgadas OLED</schema:screen>
-    <schema:price>1299.99</schema:price>
-    <schema:description>El último iPhone con tecnología avanzada. También tiene una pantalla grande</schema:description>
-    <schema:ram>6GB</schema:ram>
-    <schema:processor>A16 Bionic</schema:processor>
-    <schema:name>iPhone 15</schema:name>
-    <schema:battery>4000mAh</schema:battery>
-    <schema:brand>Apple</schema:brand>
-    <schema:storage>128GB</schema:storage>
-  </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/null">
-    <schema:category>Smartphone</schema:category>
-    <schema:ram>8</schema:ram>
-    <schema:processor>E5 2660v3</schema:processor>
-    <schema:price>2400</schema:price>
-    <schema:battery>4000</schema:battery>
-    <schema:brand>Apple</schema:brand>
-    <schema:brand>Apple</schema:brand>
-    <schema:description>DWFERWFRFR, este celular tiene una pizza</schema:description>
-    <schema:storage>256</schema:storage>
-    <schema:description>fefrf</schema:description>
-    <schema:name>IPhone 14</schema:name>
-    <schema:description>hOLISDASDAS</schema:description>
-    <schema:screen>Oled</schema:screen>
-  </schema:Celular>
-  <schema:Celular rdf:about="http://example.com/celular/040">
-    <schema:storage>256GB</schema:storage>
-    <schema:processor>Snapdragon 8 Gen 3</schema:processor>
-    <schema:screen>6.8 pulgadas AMOLED</schema:screen>
-    <schema:operatingSystem>Android 14</schema:operatingSystem>
-    <schema:description>Un smartphone de gama alta con IA.</schema:description>
-    <schema:battery>4500mAh</schema:battery>
-    <schema:category>Smartphone</schema:category>
-    <schema:name>Samsung Galaxy S24</schema:name>
+    <schema:operatingSystem>iOS</schema:operatingSystem>
+    <schema:price>6799.00</schema:price>
+    <schema:description>Es un celular de muy alta gama, especializado para creadores de contenido, tiene una pantalla muy buena y viene con una pizza</schema:description>
+    <schema:storage>512GB</schema:storage>
+    <schema:category>Smatphone</schema:category>
+    <schema:name>iPhone 16 pro max</schema:name>
     <schema:ram>8GB</schema:ram>
-    <schema:price>1099.99</schema:price>
-    <schema:brand>Samsung</schema:brand>
-  </schema:Celular>
-  <schema:Celular rdf:about="http://example.com/celular/020">
-    <schema:battery>4000mAh</schema:battery>
-    <schema:ram>6GB</schema:ram>
-    <schema:storage>128GB</schema:storage>
-    <schema:name>iPhone 15</schema:name>
-    <schema:description>El último iPhone con tecnología avanzada.</schema:description>
-    <schema:category>Smartphone</schema:category>
-    <schema:screen>6.1 pulgadas OLED</schema:screen>
-    <schema:processor>A16 Bionic</schema:processor>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/Apple_Inc."/>
+    <schema:battery>4000mA</schema:battery>
+    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
     <schema:brand>Apple</schema:brand>
-    <schema:price>1299.99</schema:price>
+    <schema:processor>M4</schema:processor>
+    <schema:screen>6.7</schema:screen>
+  </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/001">
+    <schema:operatingSystem>Android</schema:operatingSystem>
+    <schema:description>Nuevo flagship de Samsung con IA integrada.</schema:description>
+    <schema:category>Smartphone</schema:category>
+    <schema:storage>256GB</schema:storage>
+    <schema:price>1099.99</schema:price>
+    <schema:name>Samsung Galaxy S24</schema:name>
+    <schema:ram>12GB</schema:ram>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/Samsung"/>
+    <schema:category rdf:resource="http://www.wikidata.org/entity/Q22686"/>
+    <schema:processor>Snapdragon 8 Gen 3</schema:processor>
+    <schema:brand>Samsung</schema:brand>
+    <schema:battery>5000mAh</schema:battery>
+    <schema:screen>6.8 pulgadas AMOLED</schema:screen>
   </schema:Celular>
 </rdf:RDF>

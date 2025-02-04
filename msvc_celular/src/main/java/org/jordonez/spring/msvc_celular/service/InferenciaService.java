@@ -24,7 +24,6 @@ public class InferenciaService {
             model.read(in, null);
         }
 
-
         // ✅ Cargar reglas desde el archivo con manejo de excepciones
         File file = new File("src/main/resources/rules.txt");
         System.out.println("🔍 Probando acceso a rules.txt en: " + file.getAbsolutePath());

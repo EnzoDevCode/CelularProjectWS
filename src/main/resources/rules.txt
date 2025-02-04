@@ -11,3 +11,10 @@
     (?x schema:brand "Samsung") 
     -> (?x schema:operatingSystem "Android")
 ]
+
+[HuaweiUsesHarmonyOS:
+    (?x rdf:type schema:Celular),
+    (?x schema:brand "Huawei")
+    ->
+    (?x schema:operatingSystem "HarmonyOS")
+]

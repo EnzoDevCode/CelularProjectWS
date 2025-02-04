@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Celulares</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="container mt-4">
+    <h1 class="text-center">Gestión de Celulares</h1>
+
+    <!-- Formulario para agregar celular -->
+    <div class="card mt-4">
+      <div class="card-header">Agregar Celular</div>
+      <div class="card-body">
+        <form id="celularForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Marca</label>
+              <input type="text" class="form-control" id="marca" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Precio</label>
+              <input type="text" class="form-control" id="precio" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Categoría</label>
+              <input type="text" class="form-control" id="categoria" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">RAM</label>
+              <input type="text" class="form-control" id="ram" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Almacenamiento</label>
+              <input type="text" class="form-control" id="almacenamiento" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Batería</label>
+              <input type="text" class="form-control" id="bateria" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Procesador</label>
+              <input type="text" class="form-control" id="procesador" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Pantalla</label>
+              <input type="text" class="form-control" id="pantalla" />
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control" id="descripcion"></textarea>
+            </div>
+            <div class="col-md-12 mt-3">
+              <button type="submit" class="btn btn-primary">
+                Agregar Celular
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Cuadro de búsqueda y botones -->
+    <div class="row mt-4 position-relative">
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          id="buscarInput"
+          placeholder="Buscar celulares por nombre..."
+          oninput="obtenerSugerencias()"
+        />
+        <!-- 🔹 Contenedor para mostrar sugerencias -->
+        <div id="sugerenciasContainer" class="sugerencias-list"></div>
+      </div>
+      <div class="col-md-3">
+        <button
+          class="btn btn-outline-primary w-100"
+          id="btnBuscar"
+          onclick="buscarCelulares()"
+        >
+          Buscar 🔍
+        </button>
+      </div>
+    </div>
+
+    <!-- 🔹 CSS para mejorar la apariencia de las sugerencias -->
+    <style>
+      .sugerencias-list {
+        position: absolute;
+        background: white;
+        border: 1px solid #ddd;
+        width: calc(100% - 30px);
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+        display: none;
+        border-radius: 5px;
+      }
+
+      .sugerencia-item {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+      }
+
+      .sugerencia-item:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+
+    <!-- Tabla para mostrar celulares -->
+    <div class="mt-4">
+      <h2>Lista de Celulares</h2>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>RAM</th>
+            <th>Almacenamiento</th>
+            <th>Batería</th>
+            <th>Procesador</th>
+            <th>Pantalla</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody id="celularesTable">
+          <tr>
+            <td colspan="10" class="text-center">No hay datos aún</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("✅ DOM completamente cargado.");
+
+        const btnBuscar = document.getElementById("btnBuscar");
+        const btnConsultar = document.getElementById("btnConsultar");
+
+        if (btnBuscar) {
+          btnBuscar.addEventListener("click", buscarCelulares);
+        } else {
+          console.error(
+            "❌ Error: No se encontró el botón de búsqueda. Verifica el HTML."
+          );
+        }
+
+        if (btnConsultar) {
+          btnConsultar.addEventListener("click", () => consultarCelulares());
+        } else {
+          console.error(
+            "❌ Error: No se encontró el botón de consulta. Verifica el HTML."
+          );
+        }
+
+        //agregar buscar
+        const celularForm = document.getElementById("celularForm");
+
+        if (celularForm) {
+          celularForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Evitar recargar la página
+            agregarCelular();
+          });
+        } else {
+          console.error(
+            "❌ Error: No se encontró el formulario de agregar celular."
+          );
+        }
+      });
+
+      function buscarCelulares() {
+        const buscarInput = document.getElementById("buscarInput");
+        if (!buscarInput) {
+          console.error("❌ Error: No se encontró el input de búsqueda.");
+          return;
+        }
+
+        const query = buscarInput.value.trim() || " ";
+        let url = "http://localhost:8080/api/celulares/search";
+        if (query) {
+          url += `?query=${encodeURIComponent(query)}`;
+        }
+        consultarCelulares(url);
+      }
+
+      //función agregar celulares
+      function agregarCelular() {
+        // 📌 Capturar valores del formulario
+        const celularData = {
+          nombre: document.getElementById("nombre").value.trim(),
+          marca: document.getElementById("marca").value.trim(),
+          precio: document.getElementById("precio").value.trim(),
+          categoria: document.getElementById("categoria").value.trim(),
+          ram: document.getElementById("ram").value.trim(),
+          almacenamiento: document
+            .getElementById("almacenamiento")
+            .value.trim(),
+          bateria: document.getElementById("bateria").value.trim(),
+          procesador: document.getElementById("procesador").value.trim(),
+          pantalla: document.getElementById("pantalla").value.trim(),
+          descripcion: document.getElementById("descripcion").value.trim(),
+        };
+
+        // 📌 Verificar si todos los campos obligatorios están llenos
+        if (!celularData.nombre || !celularData.marca || !celularData.precio) {
+          alert("⚠️ Los campos Nombre, Marca y Precio son obligatorios.");
+          return;
+        }
+
+        console.log("📡 Enviando datos al backend:", celularData);
+
+        // 📌 Enviar los datos al backend con `fetch`
+        fetch("http://localhost:8080/api/celulares/agregar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(celularData),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`❌ Error en la API: ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("✅ Celular agregado correctamente:", data);
+            alert("✅ Celular agregado correctamente.");
+
+            // 📌 Limpiar el formulario después de agregar
+            document.getElementById("celularForm").reset();
+          })
+          .catch((error) => {
+            console.error("❌ Error al agregar celular:", error);
+            alert("❌ Error al agregar el celular. Revisa la consola.");
+          });
+      }
+
+      function consultarCelulares(
+        url = "http://localhost:8080/api/celulares/search"
+      ) {
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("📡 JSON recibido:", data);
+
+            let celulares = [];
+            if (data["@graph"]) {
+              celulares = data["@graph"];
+            } else if (typeof data === "object" && !Array.isArray(data)) {
+              celulares = [data];
+            } else {
+              console.error(
+                "❌ Error: La respuesta no tiene un formato válido.",
+                data
+              );
+              return;
+            }
+
+            let tbody = document.getElementById("celularesTable");
+            tbody.innerHTML = "";
+
+            celulares.forEach((item) => {
+              let row = `<tr>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/name"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/brand"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/price"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/category"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/ram"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/storage"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/battery"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/processor"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/screen"
+                            )}</td>
+                            <td>${obtenerValor(
+                              item,
+                              "http://schema.org/description"
+                            )}</td>
+                        </tr>`;
+              tbody.innerHTML += row;
+            });
+          })
+          .catch((error) => console.error("❌ Error en GET:", error));
+      }
+
+      function obtenerValor(objeto, propiedad) {
+        if (!objeto || !propiedad) return "N/A";
+        if (Array.isArray(objeto[propiedad])) {
+          return objeto[propiedad].join(", ") || "N/A";
+        }
+        return objeto[propiedad] || "N/A";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const buscarInput = document.getElementById("buscarInput");
+
+        // ✅ Asegurar que la función se llame en cada entrada de texto
+        buscarInput.addEventListener("input", obtenerSugerencias);
+      });
+
+      // 🔹 Obtener sugerencias en tiempo real
+      function obtenerSugerencias() {
+        const buscarInput = document.getElementById("buscarInput");
+        const sugerenciasContainer = document.getElementById(
+          "sugerenciasContainer"
+        );
+        const textoBusqueda = buscarInput.value.trim();
+
+        // ✅ Si el campo de búsqueda está vacío, ocultamos sugerencias
+        if (!textoBusqueda) {
+          sugerenciasContainer.innerHTML = "";
+          sugerenciasContainer.style.display = "none";
+          return;
+        }
+
+        console.log("📡 Buscando sugerencias para:", textoBusqueda);
+
+        // 📡 Llamada a la API de sugerencias
+        fetch(
+          `http://localhost:8080/api/sugerencias?query=${encodeURIComponent(
+            textoBusqueda
+          )}`
+        )
+          .then((response) => response.json())
+          .then((sugerencias) => {
+            console.log("sugerencias: ".sugerencias);
+            sugerenciasContainer.innerHTML = ""; // Limpiar sugerencias anteriores
+
+            // ✅ Si no hay sugerencias, ocultamos el contenedor
+            if (sugerencias.length === 0) {
+              sugerenciasContainer.style.display = "none";
+              return;
+            }
+
+            // 📌 Mostrar sugerencias en la lista
+            sugerencias.forEach((sugerencia) => {
+              let item = document.createElement("div");
+              item.classList.add("sugerencia-item");
+              item.textContent = sugerencia;
+
+              // 🔥 Autocompletar el input al hacer clic en una sugerencia
+              item.onclick = function () {
+                buscarInput.value = sugerencia;
+                sugerenciasContainer.innerHTML = "";
+                sugerenciasContainer.style.display = "none";
+                buscarCelulares(); // Opcional: hacer búsqueda automáticamente
+              };
+
+              sugerenciasContainer.appendChild(item);
+            });
+
+            sugerenciasContainer.style.display = "block"; // Mostrar sugerencias
+          })
+          .catch((error) =>
+            console.error("❌ Error obteniendo sugerencias:", error)
+          );
+      }
+    </script>
+  </body>
+</html>
