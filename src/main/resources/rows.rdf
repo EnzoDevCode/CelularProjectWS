@@ -8,7 +8,7 @@
     <schema:processor>A16 Bionic</schema:processor>
     <schema:battery>4000mAh</schema:battery>
     <schema:storage>128GB</schema:storage>
-    <schema:description>El último iPhone con tecnología avanzada.</schema:description>
+    <schema:description>El último iPhone con tecnología avanzada. Tiene 6GB de ram. Además tiene una hamburguesa</schema:description>
     <schema:category>Smartphone</schema:category>
     <schema:ram>6GB</schema:ram>
     <schema:price>1299.99</schema:price>
@@ -18,7 +18,7 @@
     <schema:category>Smartphone</schema:category>
     <schema:screen>6.1 pulgadas OLED</schema:screen>
     <schema:price>1299.99</schema:price>
-    <schema:description>El último iPhone con tecnología avanzada.</schema:description>
+    <schema:description>El último iPhone con tecnología avanzada. También tiene una pantalla grande</schema:description>
     <schema:ram>6GB</schema:ram>
     <schema:processor>A16 Bionic</schema:processor>
     <schema:operatingSystem>iOS</schema:operatingSystem>
@@ -29,9 +29,22 @@
   </schema:Celular>
   <schema:Celular rdf:about="http://example.com/celular/050">
     <schema:screen>6.8 pulgadas AMOLED</schema:screen>
+  <schema:Celular rdf:about="http://example.com/celular/null">
     <schema:category>Smartphone</schema:category>
-    <schema:ram>12GB</schema:ram>
-    <schema:price>1199.99</schema:price>
+    <schema:ram>8</schema:ram>
+    <schema:processor>E5 2660v3</schema:processor>
+    <schema:price>2400</schema:price>
+    <schema:battery>4000</schema:battery>
+    <schema:brand>Apple</schema:brand>
+    <schema:brand>Apple</schema:brand>
+    <schema:description>DWFERWFRFR, este celular tiene una pizza</schema:description>
+    <schema:storage>256</schema:storage>
+    <schema:description>fefrf</schema:description>
+    <schema:name>IPhone 14</schema:name>
+    <schema:description>hOLISDASDAS</schema:description>
+    <schema:screen>Oled</schema:screen>
+  </schema:Celular>
+  <schema:Celular rdf:about="http://example.com/celular/040">
     <schema:storage>256GB</schema:storage>
     <schema:name>Galaxy S24</schema:name>
     <schema:description>El nuevo flagship de Samsung con IA integrada.</schema:description>
@@ -55,6 +68,7 @@
     <schema:brand>Samsung</schema:brand>
   </schema:Product>
   <schema:Celular rdf:about="http://example.com/celular/020">
+    <schema:operatingSystem>iOS</schema:operatingSystem>
     <schema:battery>4000mAh</schema:battery>
     <schema:ram>6GB</schema:ram>
     <schema:storage>128GB</schema:storage>

@@ -7,6 +7,7 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.util.FileManager;
@@ -39,28 +40,59 @@ public class JenaConfig {
     public static List<String> obtenerResultados(String consultaSPARQL) {
         ResultSet resultados = ejecutarConsulta(consultaSPARQL);
         List<String> listaResultados = new ArrayList<>();
+
         while (resultados.hasNext()) {
             QuerySolution solucion = resultados.nextSolution();
-            listaResultados.add(solucion.get("nombre").toString());
+
+            // ✅ Manejar valores nulos antes de llamar a .toString()
+            RDFNode resultadoNode = solucion.get("sugerencia"); // Asegúrate de que "sugerencia" es el nombre correcto en la consulta
+            if (resultadoNode != null) {
+                listaResultados.add(resultadoNode.toString());
+            }
         }
+
         return listaResultados;
     }
 
+
     public static String obtenerResultadosComoJsonLD(String consultaSPARQL) {
+        // 🔥 Cargar el modelo RDF desde el archivo
         Model modelo = ModelFactory.createDefaultModel();
         try (InputStream in = FileManager.get().open(RDF_FILE)) {
+            if (in == null) {
+                throw new RuntimeException("No se pudo encontrar el archivo RDF: " + RDF_FILE);
+            }
             modelo.read(in, null);
         } catch (Exception e) {
             throw new RuntimeException("Error leyendo el archivo RDF", e);
         }
 
-        // Convertir el modelo RDF a JSON-LD directamente
+        // 🔥 Ejecutar la consulta SPARQL sobre el modelo RDF
+        Query query = QueryFactory.create(consultaSPARQL);
+        Model modeloResultados = ModelFactory.createDefaultModel(); // 🔹 Modelo RDF para guardar los resultados filtrados
+
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, modelo)) {
+            ResultSet results = qexec.execSelect();
+            QuerySolution solution;
+
+            // 🔹 Convertir resultados a un nuevo modelo RDF
+            while (results.hasNext()) {
+                solution = results.nextSolution();
+                modeloResultados.add(modelo.listStatements(solution.getResource("?producto"), null, (String) null));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error ejecutando SPARQL en el archivo RDF", e);
+        }
+
+        // 🔥 Convertir el modelo filtrado a JSON-LD
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        RDFDataMgr.write(outputStream, modelo, RDFFormat.JSONLD);
+        RDFDataMgr.write(outputStream, modeloResultados, RDFFormat.JSONLD);
+
+        // 📌 Mostrar los resultados en consola para debugging
+        System.out.println("Resultados SPARQL filtrados en JSON-LD:\n" + outputStream.toString());
 
         return outputStream.toString();
     }
-
 
 }
 
