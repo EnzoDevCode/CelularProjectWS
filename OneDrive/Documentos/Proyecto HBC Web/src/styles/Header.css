@@ -38,12 +38,12 @@ a {
 
 .headerlogo {
   display: inline-block;
-  width: 360px;
+  width: 520px;
   height: auto;
   position: absolute;
-  margin-left: -43vw;
-  top: -43.5px;
-  
+  margin-left: -52vw;
+  top: -22px;
+  z-index: 5;
 }
 
 .headerlogo img {

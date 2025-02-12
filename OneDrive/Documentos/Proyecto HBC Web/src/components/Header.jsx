@@ -10,7 +10,7 @@ import { paquetes } from "../data/paquetesData";
 import { interData } from "../data/interData";  // Importa Paquetes Internacionales
 import { nacData } from "../data/nacData";  // Importa Paquetes Nacionales
 import { tours } from "../data/tourData";
-import logo from "../images/images-logo/logoblancoHBC.png";
+import logo from "../images/images-logo/logocoloresHBC.png";
 import "../styles/Header.css";
 
 const Header = () => {

@@ -37,18 +37,17 @@ import ProteccionNinosAdolescentes from "./pages/ProteccionNinosAdolescentes";
 import TerminosCondiciones from "./pages/TerminosCondiciones";
 import Tour from "./pages/Tour";
 import Destinos from "./pages/Destinos";
+import PaquetesInternacionales from "./pages/PaquetesInternacionales"
+import PaquetesNacionales from "./pages/PaquetesNacionales"
 import Tours from "./pages/Tours";
 
 // Images
-import castilloImg1 from "./images/images-header/20150627_111505.jpg";
-import rioAmazonasDesc from "./images/images-header/20190611_152722.jpg";
-import Ahuahiaco from "./images/images-header/Ahuahiaco.jpg";
-import carpisuyacu from "./images/images-header/Carpisuyacu.jpg";
-import lagunaAzul from "./images/images-header/IMG_5427.jpg";
-import taytamaky from "./images/images-header/Taytamaky.jpg";
-import logoImage from "./images/images-logo/imagotipoVerdeAzul.png";
-import cartagena from "./images/images-header/cartagena-1.jpg";
-
+import machupicchu from "./images/images-header/machupicchu-1.jpg";
+import europa from "./images/images-header/europa-1.jpg";
+import tajMahal from "./images/images-header/tajmahal-1.jpg";
+import africa from "./images/images-header/africa-1.jpg";
+import norteamerica from "./images/images-header/norteamerica-1.jpg";
+import paquetesEspeciales from "./images/images-header/paquetesespeciales-1.jpg";
 
 // Custom hooks
 import VerticalSeparator from "./components/VerticalSeparator";
@@ -56,6 +55,7 @@ import useFadeIn from "./hooks/useFadeIn";
 import useScrollToTop from "./hooks/useScrollToTop";
 
 import emailjs from "emailjs-com";
+import { FaMapMarkerAlt } from "react-icons/fa"; // Importamos el ícono de ubicación
 
 import { tours } from './data/tourData'; // Importa los datos de los tours
 
@@ -64,14 +64,21 @@ emailjs.init("3Y643CQ4vkLO2T_p0pDtX");
 register();
 
 const sliderImages = [
-  { url: cartagena, span1: "Colombia, Sudamérica", title: "Cartagena de Indias", position: "top-right" },
-  
+  { url: machupicchu, span1: <><FaMapMarkerAlt /> Sudamérica</>, title: "Machu Picchu", position: "top-right" },
+  { url: europa, span1: <><FaMapMarkerAlt /> Europa</>, title: "Europa", position: "top-right" },
+  { url: tajMahal, span1: <><FaMapMarkerAlt /> Asia</>, title: "Asia", position: "top-right" },
+  { url: africa, span1: <><FaMapMarkerAlt /> África</>, title: "África", position: "top-right" },
+  { url: norteamerica, span1: <><FaMapMarkerAlt /> Norteamérica</>, title: "Norteamérica", position: "top-right" },
+  { url: paquetesEspeciales, span1: <><FaMapMarkerAlt /> Paquetes Especiales</>, title: "Paquetes Especiales", position: "top-right" }
 ];
+
+
+
 
 function App() {
   useScrollToTop();
   useFadeIn();
-  const [isHovered, setIsHovered] = useState(false); //por si queremos hacer el cuerpo oscuro al hoverear, sino eliminar
+  const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
   const [pageKey, setPageKey] = useState(location.pathname);
 
@@ -94,7 +101,6 @@ function App() {
             <div>
               
               <SliderTop sliderImages={sliderImages} />
-              <ContactForm/>
               <div className="bg-inner-shadow">
               <TourSlider 
   title="Destinos Exclusivos"
@@ -110,6 +116,8 @@ function App() {
     data={tours} // Asegúrate de que el prop data esté definido
     showButton={true} // Puedes ajustar este valor según lo necesites
   />
+  
+  <ContactForm/>
 </div>
               </div>
             </div>
@@ -118,6 +126,8 @@ function App() {
 
         {/* Ruta de la página de Tours */}
         <Route path="/destinos" element={<Destinos />} />
+        <Route path="/paquetes-internacionales" element={<PaquetesInternacionales />} />
+        <Route path="/paquetes-nacionales" element={<PaquetesNacionales />} />
         <Route path="/paquetes" element={<Paquetes />} />
         <Route path="/paquete/:nombre" element={<Paquete />} />
         <Route path="/contacto" element={<Contactanos />} />

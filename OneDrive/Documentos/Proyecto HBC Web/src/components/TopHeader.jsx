@@ -73,7 +73,6 @@ const TopHeader = () => {
     target="_blank"
     rel="noopener noreferrer"
   >
-    Contáctanos
     <i className="fab fa-whatsapp whatsapp-icon"></i> 
   </a>
 </li>
