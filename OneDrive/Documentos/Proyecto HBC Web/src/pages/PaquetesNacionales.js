@@ -20,8 +20,8 @@ const Destinos = () => {
 
       <TitleSubtitle
         backgroundTitle={"Explora"}
-        title={"Destinos"}
-        subtitle={"Descubre tu próximo destino"}
+        title={"Paquetes Nacionales"}
+        subtitle={"Visita el Perú y sus maravillas"}
         position="centro"
       />
 

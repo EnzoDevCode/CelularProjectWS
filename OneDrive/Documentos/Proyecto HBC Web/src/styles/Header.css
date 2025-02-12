@@ -38,11 +38,11 @@ a {
 
 .headerlogo {
   display: inline-block;
-  width: 520px;
+  width: 395px;
   height: auto;
   position: absolute;
-  margin-left: -52vw;
-  top: -22px;
+  margin-left: -48vw;
+  top: -50px;
   z-index: 5;
 }
 
@@ -63,7 +63,7 @@ a {
   padding-right: 12px;
   align-items: center; /* Centra verticalmente */
   width: 101%; /* Abarca todo el ancho disponible */
-  padding: 14px 7vw  14px  50px ;
+  padding: 14px 5vw  14px  50px ;
   border-radius: 5px; /* Bordes redondeados */
   position: relative;
   top: 15px; /* Desplázalo hacia abajo */
@@ -76,8 +76,8 @@ a {
   color: #002e5d;
   font-family: "Segoe UI Emoji", sans-serif;
   float: right;
-  padding: 5px 12px;
-  margin: 0 5px;
+  padding: 1px 12px;
+  margin: 0 2px;
   font-weight: bold;
   font-size: 15px;
   width: auto;

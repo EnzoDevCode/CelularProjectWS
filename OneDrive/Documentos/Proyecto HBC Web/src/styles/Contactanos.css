@@ -1,106 +1,92 @@
-.contactanos-container {
-  padding: 20px;
+/* ======= Contenedor Principal ======= */
+.contact-section {
   max-width: 1200px;
   margin: auto;
+  padding: 40px 20px;
   text-align: center;
   background-color: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info {
+/* ======= Redes Sociales ======= */
+.social-media-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.contact-item {
-  float: left;
-  width: 45%;
-  margin: 10px 0;
-  text-align: left;
-}
-
-.contact-header {
+.social-media-item {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
-}
-
-.contact-item h3 {
-  font-size: 1.2em;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #333;
-  margin: 0;
-}
-
-.contact-item i {
-  font-size: 1.5em;
-  color: #007bff;
-  margin-right: 10px;
-}
-
-.contact-item p {
-  font-size: 1em;
-  color: #555;
-  margin: 0;
-}
-
-.contact-item a {
+  background-color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
-/* Estilos adicionales */
-.additional-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 30px;
+.social-media-item i {
+  font-size: 1.8rem;
 }
 
-.info-item {
-  width: 45%;
-  margin: 10px 0;
-  text-align: left;
+.social-media-item:hover {
+  transform: scale(1.1);
 }
 
-.info-item h3 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
+/* Colores personalizados para cada red */
+.facebook { color: #1877f2; }
+.instagram { color: #e4405f; }
+.tiktok { color: #000000; }
+.whatsapp { color: #25d366; }
+
+/* ======= Medios de Pago ======= */
+.payment-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.payment-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   color: #333;
 }
 
-.info-item p {
-  font-size: 1em;
-  color: #555;
-}
-
-.info-item i {
-  font-size: 1.5em;
-  color: #28a745;
-  margin-right: 10px;
-}
-
-.payment-icons-contact{
+.payment-icons {
   display: flex;
-  flex-direction: column;
-  margin: 0;
+  justify-content: center;
+  gap: 20px;
 }
 
-.payment-icons-contact i{
-  padding: 4px 8px 4px;
-  gap: 5px;
+.payment-icons img {
+  width: 100px;
+  transition: transform 0.3s ease;
 }
 
-.payment-icons-contact img {
-  width: 40px;
-  height: auto;
-  margin: 5px;
+.payment-icons img:hover {
+  transform: scale(1.1);
 }
 
-@media (max-width: 650px) {
-  .contact-item,
-  .info-item {
-    width: 100%;
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  .social-media-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-icons img {
+    width: 80px;
   }
 }
