@@ -1,1 +1,13 @@
+# Ignorar archivos del sistema y de OneDrive
+.DS_Store
+Thumbs.db
+OneDrive/
+Desktop/
+AppData/
+Configuración local/
+Mis documentos/
+Plantillas/
+Reciente/
+SendTo/
+Cookies/
 node_modules/
